@@ -1,0 +1,217 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+main,
+audio,
+canvas,
+video {
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	height: 100%;
+	font-size: 62.5%;
+}
+
+body {
+	height: 100%;
+}
+
+main#content {
+	grid-column: 2 / -1;
+	color: var(--color-orange-5);
+	background: var(--color-white);
+}
+
+body,
+input,
+button,
+select,
+textarea {
+	font-family: 'Source Code Pro', mono, sans-serif;
+	font-size: 18px;
+	line-height: 1.5;
+	font-weight: normal;
+	color: var(--color-dark-2);
+}
+
+a {
+	color: var(--color-orange-5);
+	text-decoration: none;
+	transition: all 0.4s ease-in-out;
+}
+
+a:hover {
+	cursor: pointer;
+	text-decoration: none;
+}
+
+img {
+	height: auto;
+	max-width: 100%;
+	display: block;
+}
+
+::selection {
+	color: #ffffff;
+	background: var(--color-orange-5);
+}
+
+::-moz-selection {
+	color: #ffffff;
+	background: var(--color-orange-5);
+}
+
+.site-wrapper {
+	display: grid;
+  grid-template: 1fr/42rem repeat(12, 1fr);
+	position: relative;	
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+	display: block;
+	font-family: "Fira Sans";
+	font-weight: 400;
+}
+
+h1,
+.h1 {
+	font-size: 4rem;
+	line-height: 1.16;
+	letter-spacing: -0.125rem;
+	margin-bottom: 3.6rem;
+}
+
+h2,
+.h2 {
+	font-size: 3.2rem;
+	line-height: 1.16;
+	letter-spacing: -0.125rem;
+	margin-bottom: 2.4rem;
+}
+
+h3,
+.h3 {
+	font-size: 2.8rem;
+	line-height: 1.214;
+	letter-spacing: -0.125rem;
+	margin-bottom: 2rem;
+}
+
+h4,
+.h4 {
+	font-size: 16px;
+	line-height: 1.05;
+	letter-spacing: -0.125rem;
+	margin-bottom: 24px;
+}
+
+h5,
+.h5 {
+	font-size: 14px;
+	line-height: 1.05;
+	letter-spacing: -0.125rem;
+	margin-bottom: 16px;
+}
+
+h6,
+.h6 {
+	font-size: 12px;
+	line-height: 1.05;
+	margin-bottom: 16px;
+	letter-spacing: -0.125rem;
+	text-transform: uppercase;
+}
+
+.p,
+p {
+	display: block;
+	font-size: 18px;
+	font-family: 'Source Code Pro', serif;
+	line-height: 1.5;
+	color: var(--color-dark-4);
+	margin-bottom: 18px;
+	font-weight: 400;
+	letter-spacing: 0;
+}
+
+pre {
+	white-space: pre;
+	background: transparent;
+	padding: 2rem 4rem 0;
+	margin-bottom: 2rem;
+	border-width: 0.2rem;
+	border-style: solid;
+	border-image: var(--gradient-orange) 1;
+}
+
+code {
+	color: var(--color-dark-2);
+	padding: 0;
+	span {
+		color: var(--color-orange-5);
+		&.green {
+			color: var(--color-gradient-6);
+		}
+		&.purple {
+			color: var(--color-gradient-4);
+		}
+		&.blue {
+			color: var(--color-gradient-5);
+		}
+		&.bold {
+			color: var(--color-dark-2);
+			font-weight: bold;
+		}
+	}
+}
+
+.before-enter {
+  opacity: 0;
+}
+
+.enter {
+  transition: opacity 2s ease;  
+}
+
+.fade-enter {
+	transform: translateX(1rem);
+	opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+	transition: all 0.4s ease;	
+}
+
+.fade-leave-to {
+	transform: translateX(-1rem);
+	opacity: 0;	
+}

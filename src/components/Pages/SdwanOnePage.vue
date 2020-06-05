@@ -1,0 +1,83 @@
+<template>
+	<main id="content">
+		<page-header>
+			<template slot="title">SDWAN 1.0 Domestic</template>
+			<template slot="subtitle"
+				>SDWAN Configuration for the CPE domestic
+				sites</template
+			>
+		</page-header>
+		<tabs>
+			<tab :selected="true" name="Licensing">
+				<licensing-section></licensing-section>
+			</tab>
+			<tab name="VRF">
+				<vrf-section></vrf-section>
+			</tab>
+			<tab name="Authentication">
+				<authentication-section></authentication-section>
+			</tab>
+			<tab name="Management">
+				<management-section></management-section>
+			</tab>
+			<tab name="Interface">
+				<page-interface></page-interface>
+			</tab>
+			<tab name="Cellular">
+				<cellular-section></cellular-section>
+			</tab>
+			<tab name="Crypto">
+				<crypto-section></crypto-section>
+			</tab>
+			<tab name="Tunnels">
+				<tunnel-section></tunnel-section>
+			</tab>
+			<tab name="BGP">
+				<bgp-section></bgp-section>
+			</tab>
+			<tab name="Routing">
+				<routing-section></routing-section>
+			</tab>
+			<tab name="NAT">
+				<nat-section></nat-section>
+			</tab>
+			<tab name="IP SLA">
+				<sla-config></sla-config>
+			</tab>
+		</tabs>
+	</main>
+</template>
+
+<script>
+import PageHeader from '@/components/PageCommon/PageHeader';
+import LicensingSection from '../PageSections/RegularLicensing';
+import VrfSection from '../PageSections/Vrf';
+import AuthenticationSection from '../PageSections/Authentication';
+import ManagementSection from '../PageSections/Management';
+import PageInterface from './SDWAN1/Interface';
+import CellularSection from '../PageSections/Cellular';
+import CryptoSection from '../PageSections/Crypto';
+import TunnelSection from '../PageSections/Tunnels';
+import BgpSection from '../PageSections/BGP';
+import RoutingSection from '../PageSections/Routing';
+import NatSection from '../PageSections/NAT';
+import SlaConfig from './SDWAN1/Sla';
+
+export default {
+	components: {
+		PageHeader,
+		LicensingSection,
+		VrfSection,
+		AuthenticationSection,
+		ManagementSection,
+		PageInterface,
+		CellularSection,
+		CryptoSection,
+		TunnelSection,
+		BgpSection,
+		RoutingSection,
+		NatSection,
+		SlaConfig
+	}
+};
+</script>
