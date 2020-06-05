@@ -1,6 +1,26 @@
 <template>
 	<div>
 		<h3 :class="$style.h3">Authentication Configuration</h3>
+		<!-- RADIUS REQUIREMENT -->
+		<div :class="$style.inputFlex">
+			<div>
+				<h6 :class="$style.h6">
+					Is this box 16.9.x with Radius Source in a VRF?
+				</h6>
+				<select
+					:class="$style.select"
+					v-model="radius.selectedRadius"
+				>
+					<option
+						:value="{ id: radius.id, name: radius.name }"
+						v-for="radius in radiusChoice"
+						:key="radius.id"
+						>{{ radius.name }}</option
+					>
+				</select>
+			</div>
+		</div>
+		<!-- END RADIUS REQUIREMENT -->
 		<div :class="$style.inputFlex">
 			<div>
 				<h6 :class="$style.h6">Hostname</h6>
@@ -25,10 +45,18 @@
   username trouble privilege 15 secret <span>{{ troublePassword }}</span>
   !
   aaa new-model
+  !<template v-if="radius.selectedRadius.name === 'Yes'">
+  aaa group server radius RAD-SERVER
+   server name RADIUS
+   ip vrf forwarding SYG
+  !
+  aaa authentication login default group RAD-SERVER local
+  aaa authorization exec default group RAD-SERVER local
+  !</template><template v-if="radius.selectedRadius.name === 'No'">
   aaa authentication login default group radius local
   aaa authorization exec default group radius local
   aaa authorization network default local 
-  !
+  !</template>
   aaa session-id common
   !
   interface lo0
@@ -51,6 +79,20 @@
 
 <script>
 export default {
+	data() {
+		return {
+			radius: {
+				selectedRadius: {
+					id: 2,
+					name: 'No'
+				}
+			},
+			radiusChoice: [
+				{ id: 1, name: 'Yes' },
+				{ id: 2, name: 'No' }
+			]
+		};
+	},
 	setup() {
 		const hostName = 'BOI-GEN-DEMO-1';
 		const troublePassword = '!#*G4#Ebd8w';
@@ -105,6 +147,20 @@ export default {
   margin-bottom: 1rem;
 
   &:focus {
+    color: rgba(0, 0, 0, 0.8);
+    outline: none;
+  }
+}
+
+.select {
+  appearance: none;
+  background: url('~@/assets/img/ArrowDown.svg') 92% / 8% no-repeat;
+  color: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--color-orange-5);
+  padding: 1rem;
+  padding-right: 6rem;
+
+  &:focus, &:active {
     color: rgba(0, 0, 0, 0.8);
     outline: none;
   }
