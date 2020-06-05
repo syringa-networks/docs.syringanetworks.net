@@ -46,6 +46,9 @@
 			<tab name="palo alto">
 				<palo-section></palo-section>
 			</tab>
+			<tab name="EEM Script">
+				<failover-section></failover-section>
+			</tab>
 		</tabs>
 	</main>
 </template>
@@ -64,6 +67,7 @@ import BgpSection from '../PageSections/BGPPinnacle';
 import RoutingSection from '../PageSections/Routing';
 import NatSection from '../PageSections/NAT';
 import PaloSection from '../PageSections/PaloAlto';
+import FailoverSection from '../PageSections/FailoverScript';
 
 export default {
 	components: {
@@ -79,7 +83,8 @@ export default {
 		BgpSection,
 		RoutingSection,
 		NatSection,
-		PaloSection
+		PaloSection,
+		FailoverSection
 	}
 };
 </script>

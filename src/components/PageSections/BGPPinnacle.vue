@@ -41,17 +41,18 @@
     neighbor TUNNEL69_BACKUP peer-group
     neighbor TUNNEL69_BACKUP remote-as 65502
     neighbor TUNNEL69_BACKUP soft-reconfiguration inbound
-    neighbor TUNNEL69_BACKUP route-map DENY_DEFAULT_RMAP out
+    neighbor TUNNEL69_BACKUP route-map LOCAL_PREF_90 in
+    neighbor TUNNEL69_BACKUP route-map MED_25 out
     neighbor TUNNEL169_PRIMARY peer-group
     neighbor TUNNEL169_PRIMARY remote-as 65502
     neighbor TUNNEL169_PRIMARY soft-reconfiguration inbound
-    neighbor TUNNEL169_PRIMARY route-map LOCAL_PREF_90 in
-    neighbor TUNNEL169_PRIMARY route-map MED_25 out
+    neighbor TUNNEL169_PRIMARY route-map LOCAL_PREF_80 in
+    neighbor TUNNEL169_PRIMARY route-map MED_50 out
     neighbor TUNNEL169_BACKUP peer-group
     neighbor TUNNEL169_BACKUP remote-as 65502
     neighbor TUNNEL169_BACKUP soft-reconfiguration inbound
-    neighbor TUNNEL169_BACKUP route-map LOCAL_PREF_90 in
-    neighbor TUNNEL169_BACKUP route-map MED_25 out
+    neighbor TUNNEL169_BACKUP route-map LOCAL_PREF_70 in
+    neighbor TUNNEL169_BACKUP route-map MED_75 out
     neighbor TUNNEL136_PRIMARY peer-group
     neighbor TUNNEL136_PRIMARY remote-as 15305
     neighbor TUNNEL136_PRIMARY soft-reconfiguration inbound
