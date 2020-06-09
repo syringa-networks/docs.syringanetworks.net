@@ -113,8 +113,8 @@
     ip mtu 1400
     ip nhrp authentication VPN
     ip nhrp network-id 69
-    ip nhrp nhs 10.255.36.1 nbma PUBLICIPCHICAGO multicast
-    ip nhrp nhs 10.255.36.2 nbma PUBLICIPCHICAGO multicast
+    ip nhrp nhs 10.255.36.1 nbma 184.106.15.236 multicast
+    ip nhrp nhs 10.255.36.2 nbma 184.106.15.237 multicast
     ip nhrp shortcut
     ip tcp adjust-mss 1360
     tunnel source GigabitEthernet0/0/0
@@ -131,8 +131,8 @@
     ip mtu 1400
     ip nhrp authentication VPN
     ip nhrp network-id 169
-    ip nhrp nhs 10.255.37.1 nbma PUBLICIPCHICAGO multicast
-    ip nhrp nhs 10.255.37.2 nbma PUBLICIPCHICAGO multicast
+    ip nhrp nhs 10.255.37.1 nbma 184.106.15.236 multicast
+    ip nhrp nhs 10.255.37.2 nbma 184.106.15.237 multicast
     ip nhrp shortcut
     ip tcp adjust-mss 1360
     tunnel source Cellular0/2/0

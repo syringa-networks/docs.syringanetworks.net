@@ -43,6 +43,9 @@
 			<tab name="nat">
 				<nat-section></nat-section>
 			</tab>
+			<tab name="ip sla">
+				<sla-section></sla-section>
+			</tab>
 			<tab name="palo alto">
 				<palo-section></palo-section>
 			</tab>
@@ -66,6 +69,7 @@ import TunnelSection from '../PageSections/TunnelsPinnacle';
 import BgpSection from '../PageSections/BGPPinnacle';
 import RoutingSection from '../PageSections/Routing';
 import NatSection from '../PageSections/NAT';
+import SlaSection from '../PageSections/Sla';
 import PaloSection from '../PageSections/PaloAlto';
 import FailoverSection from '../PageSections/FailoverScript';
 
@@ -83,6 +87,7 @@ export default {
 		BgpSection,
 		RoutingSection,
 		NatSection,
+		SlaSection,
 		PaloSection,
 		FailoverSection
 	}

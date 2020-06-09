@@ -32,7 +32,7 @@ export default {
 
 	methods: {
 		selectTab(selectedTab) {
-			this.tabs.forEach((tab) => {
+			this.tabs.forEach(tab => {
 				tab.isActive = tab.name === selectedTab.name;
 			});
 		}
@@ -76,7 +76,7 @@ export default {
     word-spacing: -5px;
     opacity: 0.6;
     transition: opacity 0.4s ease-in-out;
-    font-size: 14px;
+    font-size: 12px;
     white-space: nowrap;
 
     &:after {
