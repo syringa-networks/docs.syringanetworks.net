@@ -2,11 +2,7 @@
 	<div>
 		<nav :class="$style.pageNav">
 			<ul>
-				<li
-					v-for="(tab, index) in tabs"
-					:key="index"
-					:class="{ [$style.isActive]: tab.isActive }"
-				>
+				<li v-for="(tab, index) in tabs" :key="index" :class="{ [$style.isActive]: tab.isActive }">
 					<a @click="selectTab(tab)">{{ tab.name }}</a>
 				</li>
 			</ul>
@@ -32,7 +28,7 @@ export default {
 
 	methods: {
 		selectTab(selectedTab) {
-			this.tabs.forEach(tab => {
+			this.tabs.forEach((tab) => {
 				tab.isActive = tab.name === selectedTab.name;
 			});
 		}
@@ -59,7 +55,7 @@ export default {
   }
 
   li {
-    padding: 2.4rem 2.4rem 2.6rem 0;
+    padding: 3rem 3rem 2.6rem 0;
   }
 
   a {

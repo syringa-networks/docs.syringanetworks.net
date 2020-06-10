@@ -17,13 +17,6 @@ export default {
 		return { isActive };
 	},
 
-	// Old way with Vue 2
-	// data() {
-	// 	return {
-	// 		isActive: false
-	// 	};
-	// },
-
 	mounted() {
 		this.isActive = this.selected;
 	}

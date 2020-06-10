@@ -9,15 +9,21 @@
 			>
 		</page-header>
 		<tabs>
-			<tab :selected="true" name="920 Routed">
+			<tab :selected="true" name="Routed">
 				<Routed />
 			</tab>
-			<tab name="920 REP">
+			<tab name="Base: Routed">
+				<BaseRouted />
+			</tab>
+			<tab name="Base: REP">
 				<Rep />
 			</tab>
-			<!-- <tab name="Test">
-				<Test />
-			</tab> -->
+			<tab name="BGP">
+				Thing
+			</tab>
+			<tab name="Customer">
+				Thing
+			</tab>
 		</tabs>
 	</main>
 </template>
@@ -25,15 +31,15 @@
 <script>
 import PageHeader from '@/components/PageCommon/PageHeader';
 import Routed from '@/components/Pages/Asr920/Routed';
+import BaseRouted from '@/components/Pages/Asr920/Routed/Base';
 import Rep from '@/components/Pages/Asr920/Rep';
-// import Test from '@/components/Pages/Asr920/Test';
 
 export default {
 	components: {
 		PageHeader,
 		Routed,
+		BaseRouted,
 		Rep
-		// Test
 	}
 };
 </script>
