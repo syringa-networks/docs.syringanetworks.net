@@ -90,7 +90,7 @@
   interface Tunnel1136
     description CUST to ATM/TDM vrf CUST/ISP2
     vrf forwarding CUST
-    ip address <span>{{ tunnel1360 }}</span> 255.255.255.0
+    ip address <span>{{ tunnel1136 }}</span> 255.255.255.0
     no ip redirects
     ip mtu 1400
     ip nhrp authentication VPN
