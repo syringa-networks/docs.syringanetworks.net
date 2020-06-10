@@ -96,7 +96,7 @@
   !<template v-if="port.selectedPort.name === '4-Port'">
   interface TenGigabitEthernet0/0/4</template><template v-if="port.selectedPort.name === '12-Port'">
   interface TenGigabitEthernet0/0/10</template><template v-if="port.selectedPort.name === '24-Port'">
-  interface TenGigabitEthernet0/0/22</template>
+  interface TenGigabitEthernet0/0/26</template>
    description DIST to <span>{{ maintenanceSpan }}</span>
    mtu 9202
    ip address <span>{{ isisIpLow }}</span> 255.255.255.254
@@ -115,7 +115,7 @@
   !<template v-if="port.selectedPort.name === '4-Port'">
   interface TenGigabitEthernet0/0/5</template><template v-if="port.selectedPort.name === '12-Port'">
   interface TenGigabitEthernet0/0/11</template><template v-if="port.selectedPort.name === '24-Port'">
-  interface TenGigabitEthernet0/0/23</template>
+  interface TenGigabitEthernet0/0/27</template>
    description DIST to <span>{{ maintenanceSpan }}</span>
    mtu 9202
    ip address <span>{{ isisIpHigh }}</span> 255.255.255.254
@@ -324,7 +324,7 @@ export default {
 		// ISIS Network ID Calculation
 		const isisNetworkID = computed(() => {
 			const address = loopbackIP.value;
-			const parts = address.split('.').map((x) => x.padStart(3, '0'));
+			const parts = address.split('.').map(x => x.padStart(3, '0'));
 
 			let isisNetworkId = parts.join('');
 			isisNetworkId = isisNetworkId.substring(4);
