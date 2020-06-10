@@ -1,22 +1,18 @@
 <template>
 	<main id="content">
 		<page-header>
-			<template slot="title"
-				>ASR 920 Configuration</template
-			>
-			<template slot="subtitle"
-				>ASR 920 Configuration for L2 and L3 rings</template
-			>
+			<template slot="title">ASR 920 Configuration</template>
+			<template slot="subtitle">ASR 920 Configuration for L2 and L3 rings</template>
 		</page-header>
 		<tabs>
-			<tab :selected="true" name="Routed">
-				<Routed />
-			</tab>
-			<tab name="Base: Routed">
+			<tab :selected="true" name="Base: Routed">
 				<BaseRouted />
 			</tab>
 			<tab name="Base: REP">
 				<Rep />
+			</tab>
+			<tab name="Routed">
+				<Routed />
 			</tab>
 			<tab name="BGP">
 				Thing
