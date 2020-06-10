@@ -4,10 +4,7 @@
 		<div :class="$style.inputFlex">
 			<div>
 				<h6 :class="$style.h6">Street Address</h6>
-				<input
-					:class="$style.input"
-					v-model="streetAddress"
-				/>
+				<input :class="$style.input" v-model="streetAddress" />
 			</div>
 			<div>
 				<h6 :class="$style.h6">Latitude</h6>
@@ -31,6 +28,12 @@
   !
   clock timezone MST -7 0
   clock summer-time MDT recurring
+  !
+  vlan 99
+   name SYG_MGMT
+  !
+  vlan 136
+   name CUST_MGMT
   !
   ip access-list standard IPV4_MGMT_ACCESS
     permit 192.168.7.0 0.0.0.255
