@@ -18,9 +18,9 @@
 			</div>
 			<div>
 				<h6 :class="$style.h6">
-					Tunnel1360 IP Address
+					Tunnel1136 IP Address
 				</h6>
-				<input :class="$style.input" v-model="tunnel1360" />
+				<input :class="$style.input" v-model="tunnel1136" />
 			</div>
 			<div>
 				<h6 :class="$style.h6">Tunnel69 IP Address</h6>
@@ -87,7 +87,7 @@
     tunnel vrf ISP1
     tunnel protection ipsec profile PRIMARY-IPSEC-PROFILE shared
   !
-  interface Tunnel1360
+  interface Tunnel1136
     description CUST to ATM/TDM vrf CUST/ISP2
     vrf forwarding CUST
     ip address <span>{{ tunnel1360 }}</span> 255.255.255.0
@@ -155,7 +155,7 @@ export default {
 			tunnel69: '10.255.36.x',
 			tunnel169: '10.255.37.x',
 			tunnel136: '10.255.12.x',
-			tunnel1360: '10.255.33.x'
+			tunnel1136: '10.255.33.x'
 		};
 	}
 };

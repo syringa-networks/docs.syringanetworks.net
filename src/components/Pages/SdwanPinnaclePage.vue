@@ -1,13 +1,8 @@
 <template>
 	<main id="content">
 		<page-header>
-			<template slot="title"
-				>SDWAN - Simplot Pinnacle</template
-			>
-			<template slot="subtitle"
-				>SDWAN Configuration for the CPE Simplot Pinnacle
-				sites</template
-			>
+			<template slot="title">SDWAN - Simplot Pinnacle</template>
+			<template slot="subtitle">SDWAN Configuration for the CPE Simplot Pinnacle sites</template>
 		</page-header>
 		<tabs>
 			<tab :selected="true" name="Licensing">
@@ -28,6 +23,9 @@
 			<tab name="Cellular">
 				<cellular-section></cellular-section>
 			</tab>
+			<tab name="Routing">
+				<routing-section></routing-section>
+			</tab>
 			<tab name="Crypto">
 				<crypto-section></crypto-section>
 			</tab>
@@ -36,9 +34,6 @@
 			</tab>
 			<tab name="BGP">
 				<bgp-section></bgp-section>
-			</tab>
-			<tab name="Routing">
-				<routing-section></routing-section>
 			</tab>
 			<tab name="nat">
 				<nat-section></nat-section>
