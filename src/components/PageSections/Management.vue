@@ -56,8 +56,6 @@
   !
   logging source-interface Loopback0 vrf SYG
   logging host 10.10.10.82 vrf CUST
-  logging host 192.168.7.235 vrf SYG
-  logging host 192.168.71.224 vrf SYG
   logging host 192.168.80.16 vrf SYG
   !
   line con 0
