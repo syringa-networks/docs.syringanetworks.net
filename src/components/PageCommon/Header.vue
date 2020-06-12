@@ -2,10 +2,7 @@
 	<header :class="$style.siteHeader">
 		<div :class="$style.siteHeaderInner">
 			<div :class="$style.logo">
-				<router-link
-					:class="$style.logoA"
-					:to="{ name: 'home' }"
-				>
+				<router-link :class="$style.logoA" :to="{ name: 'home' }">
 					<site-logo></site-logo>
 				</router-link>
 			</div>
@@ -20,11 +17,7 @@
 							tag="li"
 							v-for="link in header.navList"
 						>
-							<a
-								ref="navRef"
-								:class="$style.navigationListAnchor"
-								>{{ link.name }}</a
-							>
+							<a ref="navRef" :class="$style.navigationListAnchor">{{ link.name }}</a>
 						</router-link>
 					</ul>
 				</div>
@@ -67,7 +60,6 @@ export default {
   top: 0;
   height: 100vmin;
   z-index: 10;
-  background: var(--color-white);
   border-right: 0.1rem solid rgba(247, 92, 3, 0.3);
 }
 

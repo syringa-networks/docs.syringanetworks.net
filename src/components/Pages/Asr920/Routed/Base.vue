@@ -1,10 +1,10 @@
 <template>
 	<div>
-		<h3 :class="$style.h3">920 Base: Routed</h3>
+		<h3>920 Base: Routed</h3>
 		<div :class="$style.inputFlex">
 			<div>
-				<h6 :class="$style.h6">How Many Ports are on the 920?</h6>
-				<select :class="$style.select" v-model="port.selectedPort">
+				<h6>How Many Ports are on the 920?</h6>
+				<select v-model="port.selectedPort">
 					<option :value="{ id: port.id, name: port.name }" v-for="port in portChoice" :key="port.id">
 						{{ port.name }}
 					</option>
@@ -15,14 +15,14 @@
 		<!-- v-for Loop -->
 		<div :class="$style.inputFlex">
 			<div>
-				<h6 :class="$style.h6">
+				<h6>
 					Lo0 IP Address - 10.120, 10.130, 10.140
 				</h6>
-				<input :class="$style.input" v-model="loopbackIP" />
+				<input v-model="loopbackIP" />
 			</div>
 			<div v-for="input in inputs" :key="input.id">
-				<h6 :class="$style.h6">{{ input.name }}</h6>
-				<input :class="$style.input" v-model="input.vmodel" />
+				<h6>{{ input.name }}</h6>
+				<input v-model="input.vmodel" />
 			</div>
 		</div>
 		<!-- End v-for Loop -->
@@ -411,37 +411,6 @@ export default {
     font-weight: 400;
     letter-spacing: 0.25px;
     font-size: 16px;
-  }
-
-  input, select {
-    width: 35%;
-  }
-}
-
-.input {
-  color: rgba(0, 0, 0, 0.2);
-  background: var(--color-white);
-  border: 1px solid var(--color-orange-5);
-  padding: 1rem;
-  margin-bottom: 1rem;
-
-  &:focus {
-    color: rgba(0, 0, 0, 0.8);
-    outline: none;
-  }
-}
-
-.select {
-  appearance: none;
-  background: url('~@/assets/img/ArrowDown.svg') 92% / 8% no-repeat;
-  color: rgba(0, 0, 0, 0.2);
-  border: 1px solid var(--color-orange-5);
-  padding: 1rem;
-  padding-right: 6rem;
-
-  &:focus, &:active {
-    color: rgba(0, 0, 0, 0.8);
-    outline: none;
   }
 }
 </style>

@@ -5,15 +5,12 @@
 		</h3>
 		<div :class="$style.inputFlex">
 			<div>
-				<h6 :class="$style.h6">BGP Router ID</h6>
+				<h6 :class="$style.h6">BGP Router ID (Lo0 IP)</h6>
 				<input :class="$style.input" v-model="routerId" />
 			</div>
 			<div>
 				<h6 :class="$style.h6">LAN BGP Neighbor</h6>
-				<input
-					:class="$style.input"
-					v-model="lanBGPNeighbor"
-				/>
+				<input :class="$style.input" v-model="lanBGPNeighbor" />
 			</div>
 		</div>
 		<pre>

@@ -2,137 +2,99 @@
 	<div>
 		<div :class="$style.inputFlex">
 			<div>
-				<h6 :class="$style.h6">Customer Name</h6>
-				<input
-					:class="$style.input"
-					v-model="customerName"
-				/>
+				<h6>Customer Name</h6>
+				<input v-model="customerName" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">Router Hostname</h6>
-				<input :class="$style.input" v-model="hostName" />
+				<h6>Router Hostname</h6>
+				<input v-model="hostName" />
 			</div>
 
 			<div>
-				<h6 :class="$style.h6">Enable Secret</h6>
-				<input :class="$style.input" v-model="secret" />
+				<h6>Enable Secret</h6>
+				<input v-model="secret" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">Trouble Password</h6>
-				<input
-					:class="$style.input"
-					v-model="troublePassword"
-				/>
+				<h6>Trouble Password</h6>
+				<input v-model="troublePassword" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">Management BDI</h6>
-				<input :class="$style.input" v-model="mgmtBDI" />
+				<h6>Management BDI</h6>
+				<input v-model="mgmtBDI" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">Management IP Address</h6>
-				<input :class="$style.input" v-model="mgmtIP" />
+				<h6>Management IP Address</h6>
+				<input v-model="mgmtIP" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">Management Subnet Mask</h6>
-				<input
-					:class="$style.input"
-					v-model="mgmtSubnetMask"
-				/>
+				<h6>Management Subnet Mask</h6>
+				<input v-model="mgmtSubnetMask" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">Management Gateway IP</h6>
-				<input
-					:class="$style.input"
-					v-model="mgmtGatewayIP"
-				/>
+				<h6>Management Gateway IP</h6>
+				<input v-model="mgmtGatewayIP" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">Policy Map Name</h6>
-				<input
-					:class="$style.input"
-					v-model="policyMapName"
-				/>
+				<h6>Policy Map Name</h6>
+				<input v-model="policyMapName" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">INBOUND Policer Rate</h6>
-				<input
-					:class="$style.input"
-					v-model="inboundPolicy"
-				/>
-				<select :class="$style.select" v-model="throughput">
-					<option disabled value=""
-						>Policing Throughput</option
-					>
+				<h6>INBOUND Policer Rate</h6>
+				<input v-model="inboundPolicy" />
+				<select v-model="throughput">
+					<option disabled value="">Policing Throughput</option>
 					<option>{{ kilobits }}: kbps</option>
 					<option>{{ megabits }}: mbps</option>
 					<option>{{ gigabits }}: gbps</option>
 				</select>
 			</div>
 			<div>
-				<h6 :class="$style.h6">REP Segment ID</h6>
-				<input
-					:class="$style.input"
-					v-model="repSegmentID"
-				/>
+				<h6>REP Segment ID</h6>
+				<input v-model="repSegmentID" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">REP Bridge Domain</h6>
-				<input
-					:class="$style.input"
-					v-model="repBridgeDomain"
-				/>
+				<h6>REP Bridge Domain</h6>
+				<input v-model="repBridgeDomain" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">All VLANs on REP Ring</h6>
-				<input :class="$style.input" v-model="repVlans" />
+				<h6>All VLANs on REP Ring</h6>
+				<input v-model="repVlans" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">UPS IP</h6>
-				<input :class="$style.input" v-model="upsIP" />
+				<h6>UPS IP</h6>
+				<input v-model="upsIP" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">CPE Hostname</h6>
-				<input
-					:class="$style.input"
-					v-model="cpeHostname"
-				/>
+				<h6>CPE Hostname</h6>
+				<input v-model="cpeHostname" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">Customer VLAN</h6>
-				<input :class="$style.input" v-model="custVlan" />
+				<h6>Customer VLAN</h6>
+				<input v-model="custVlan" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">Circuit ID</h6>
-				<input :class="$style.input" v-model="circuitID" />
+				<h6>Circuit ID</h6>
+				<input v-model="circuitID" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">Service Order Number</h6>
-				<input
-					:class="$style.input"
-					v-model="serviceOrderID"
-				/>
+				<h6>Service Order Number</h6>
+				<input v-model="serviceOrderID" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">Maintenance Span</h6>
-				<input
-					:class="$style.input"
-					v-model="maintenanceSpan"
-				/>
+				<h6>Maintenance Span</h6>
+				<input v-model="maintenanceSpan" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">Z Location Address</h6>
-				<input
-					:class="$style.input"
-					v-model="zLocationAddress"
-				/>
+				<h6>Z Location Address</h6>
+				<input v-model="zLocationAddress" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">Latitude</h6>
-				<input :class="$style.input" v-model="lat" />
+				<h6>Latitude</h6>
+				<input v-model="lat" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">Longitude</h6>
-				<input :class="$style.input" v-model="long" />
+				<h6>Longitude</h6>
+				<input v-model="long" />
 			</div>
 		</div>
 		<pre>
@@ -387,8 +349,7 @@ export default {
 		const secret = 'ChangeMe';
 		const troublePassword = 'ChangeMeToo';
 		const mgmtBDI = 4094;
-		const mgmtIP =
-			'Idaho - 10.121.0.0, Utah - 10.131.0.0, Wash - 10.141.0.0';
+		const mgmtIP = 'Idaho - 10.121.0.0, Utah - 10.131.0.0, Wash - 10.141.0.0';
 		const mgmtSubnetMask = '255.255.255.0';
 		const mgmtGatewayIP = 'Example: 10.121.0.1';
 
@@ -411,9 +372,7 @@ export default {
 			} else if (throughput.value[0] === 'm') {
 				return ((inboundPolicy.value * 1000000) / 8) * 0.05;
 			} else if (throughput.value[0] === 'g') {
-				return (
-					((inboundPolicy.value * 1000000000) / 8) * 0.05
-				);
+				return ((inboundPolicy.value * 1000000000) / 8) * 0.05;
 			} else {
 				return '100000';
 			}
@@ -427,8 +386,7 @@ export default {
 		const serviceOrderID = 123456;
 		const maintenanceSpan = 'MS-E1234';
 
-		const zLocationAddress =
-			'1234 Street St. Boise, ID 83704';
+		const zLocationAddress = '1234 Street St. Boise, ID 83704';
 		const lat = '43.6150';
 		const long = '116.2023';
 
@@ -471,13 +429,6 @@ export default {
 </script>
 
 <style lang="stylus" module>
-.h3 {
-  padding: 4rem;
-  margin-top: -3rem;
-  color: var(--color-white);
-  background-image: var(--gradient-rainbow);
-}
-
 .inputFlex {
   display: flex;
   flex-direction: column;
@@ -491,47 +442,6 @@ export default {
     &:last-child {
       margin-bottom: 0;
     }
-  }
-
-  .h6 {
-    font-family: 'Source Code Pro';
-    text-transform: none;
-    color: var(--color-orange-5);
-    font-weight: 400;
-    letter-spacing: 0.25px;
-    font-size: 16px;
-  }
-
-  input {
-    width: 35%;
-  }
-}
-
-.input {
-  color: rgba(0, 0, 0, 0.2);
-  background: var(--color-white);
-  border: 1px solid var(--color-orange-5);
-  padding: 1rem;
-  margin-bottom: 1rem;
-
-  &:focus {
-    color: rgba(0, 0, 0, 0.8);
-    outline: none;
-  }
-}
-
-.select {
-  appearance: none;
-  background: url('~@/assets/img/ArrowDown.svg') 92% / 8% no-repeat;
-  color: rgba(0, 0, 0, 0.2);
-  border: 1px solid var(--color-orange-5);
-  margin-left: 1rem;
-  padding: 1rem;
-  padding-right: 6rem;
-
-  &:focus, &:active {
-    color: rgba(0, 0, 0, 0.8);
-    outline: none;
   }
 }
 </style>

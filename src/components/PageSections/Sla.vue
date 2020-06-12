@@ -6,6 +6,9 @@
   ip sla 1
     icmp-echo 66.232.64.82 source-interface GigabitEthernet0/0/0
       vrf ISP1
+      threshold 200
+      timeout 500
+      frequency 1
   !
   track 1 ip sla 1 reachability
   delay down 5 up 10

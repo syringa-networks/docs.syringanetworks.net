@@ -23,7 +23,6 @@ export default {
   display: grid;
   align-items: center;
   height: 100vmin;
-  background: var(--color-white);
 }
 
 .introContainer {

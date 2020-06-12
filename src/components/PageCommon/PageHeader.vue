@@ -5,38 +5,16 @@
 				<figure :class="$style.figurIne">
 					<div :class="$style.cubeWrap">
 						<div :class="$style.inner">
-							<div
-								:class="[
-									$style.cube,
-									{ [$style.isRed]: isRed }
-								]"
-							>
-								<div
-									:class="[$style.cubeSide, $style.top]"
-								></div>
-								<div
-									:class="[$style.cubeSide, $style.bottom]"
-								></div>
-								<div
-									:class="[$style.cubeSide, $style.left]"
-								></div>
-								<div
-									:class="[$style.cubeSide, $style.right]"
-								></div>
-								<div
-									:class="[$style.cubeSide, $style.front]"
-								></div>
-								<div
-									:class="[$style.cubeSide, $style.back]"
-								></div>
+							<div :class="[$style.cube, { [$style.isRed]: isRed }]">
+								<div :class="[$style.cubeSide, $style.top]"></div>
+								<div :class="[$style.cubeSide, $style.bottom]"></div>
+								<div :class="[$style.cubeSide, $style.left]"></div>
+								<div :class="[$style.cubeSide, $style.right]"></div>
+								<div :class="[$style.cubeSide, $style.front]"></div>
+								<div :class="[$style.cubeSide, $style.back]"></div>
 							</div>
 						</div>
-						<div
-							:class="[
-								$style.cubeShadow,
-								{ [$style.isRedShadow]: isRedShadow }
-							]"
-						></div>
+						<div :class="[$style.cubeShadow, { [$style.isRedShadow]: isRedShadow }]"></div>
 					</div>
 				</figure>
 				<div :class="$style.heading">
@@ -81,7 +59,6 @@ export default {
 .pageHeader {
   padding-top: 10rem;
   padding-bottom: 9rem;
-  background-color: var(--color-white);
 }
 
 .container {
@@ -134,7 +111,6 @@ export default {
     width: 100%;
     height: 100%;
     text-align: center;
-    background: var(--color-white);
     line-height: 100px;
     border: 2px solid #0099ae;
     border-image: linear-gradient(to top, var(--color-orange-5), var(--color-orange-5)) 1 3%;
