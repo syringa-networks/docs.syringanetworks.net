@@ -125,178 +125,178 @@
 		<!-- END INFORMATION -->
 		<pre>
       <code>
-  vrf definition <span>{{ customerVRFName }}</span>
-   description <span>{{ customerVRFName }}</span> VRF
-   rd 15305:<span>{{ customerRD }}</span>
+vrf definition <span>{{ customerVRFName }}</span>
+ description <span>{{ customerVRFName }}</span> VRF
+ rd 15305:<span>{{ customerRD }}</span>
+!
+address-family ipv4
+ route-target both 15305:<span>{{ customerNumber }}</span>
+ exit-address-family
+!
+address-family ipv6
+ exit-address-family
+!
+vrf definition Mgmt-intf
+!
+address-family ipv4
+ exit-address-family
+!
+address-family ipv6
+ exit-address-family
+!
+vrf definition SYG
+ description SYG Internal Network
+ rd 15305:<span>{{ sygRD }}</span>
+!
+address-family ipv4
+ route-target both 15305:99
+ exit-address-family
+!
+address-family ipv6
+ exit-address-family
+!<template v-if="voice.selectedVoice.name === 'Yes'">
+vrf definition SYG_PBX
+ description Syringa Networks Voice PBX Customers
+ rd 15305:<span>{{ sygPBXRD }}</span>
+!
+address-family ipv4
+ route-target both 15305:97
+ exit-address-family
+!</template>
+policy-map <span>{{ policyMapName }}</span>
+ class class-default
+  police cir <span>{{ inboundPolicy }} {{ throughput[0] }}</span> bc <span>{{ bcCalculation }}</span>
+  conform-action transmit 
+  exceed-action drop
+!<template v-if="ups.selectedUPS.name === 'Yes'">
+interface GigabitEthernet0/0/0
+ description MGMT to <span>{{ upsHostname }}</span> - <span>{{ upsIP}}</span>
+ mtu 9216
+ no ip address
+ media-type rj45
+ negotiation auto
+ service instance 69 ethernet
+  description MGMT to UPS
+  encapsulation untagged
+  bridge-domain 69
   !
-  address-family ipv4
-   route-target both 15305:<span>{{ customerNumber }}</span>
-   exit-address-family
-  !
-  address-family ipv6
-   exit-address-family
-  !
-  vrf definition Mgmt-intf
-  !
-  address-family ipv4
-   exit-address-family
-  !
-  address-family ipv6
-   exit-address-family
-  !
-  vrf definition SYG
-   description SYG Internal Network
-   rd 15305:<span>{{ sygRD }}</span>
-  !
-  address-family ipv4
-   route-target both 15305:99
-   exit-address-family
-  !
-  address-family ipv6
-   exit-address-family
-  !<template v-if="voice.selectedVoice.name === 'Yes'">
-  vrf definition SYG_PBX
-   description Syringa Networks Voice PBX Customers
-   rd 15305:<span>{{ sygPBXRD }}</span>
-  !
-  address-family ipv4
-   route-target both 15305:97
-   exit-address-family
-  !</template>
-  policy-map <span>{{ policyMapName }}</span>
-   class class-default
-    police cir <span>{{ inboundPolicy }} {{ throughput[0] }}</span> bc <span>{{ bcCalculation }}</span>
-    conform-action transmit 
-    exceed-action drop
-  !<template v-if="ups.selectedUPS.name === 'Yes'">
-  interface GigabitEthernet0/0/0
-   description MGMT to <span>{{ upsHostname }}</span> - <span>{{ upsIP}}</span>
-   mtu 9216
-   no ip address
-   media-type rj45
-   negotiation auto
-   service instance 69 ethernet
-    description MGMT to UPS
-    encapsulation untagged
-    bridge-domain 69
-    !
-  !</template><template v-if="ups.selectedUPS.name === 'No'">
-  interface GigabitEthernet0/0/0
-   description UNUSED
-   mtu 9216
-   no ip address
-   media-type rj45
-   negotiation auto
-   shutdown
-  !</template><template v-if="cpe.selectedCPE.name === 'Yes'">
-  interface GigabitEthernet0/0/1
-   description DIST to <span>{{ cpeHostname }}</span>
-   mtu 9180
-   no ip address
-   media-type rj45
-   negotiation auto
-   no keepalive
-   service instance 69 ethernet
-    description MGMT to <span>{{ cpeHostname }}</span>
-    encapsulation dot1q 69
-    rewrite ingress tag pop 1 symmetric
-    bridge-domain 69
-   !
-   service instance <span>{{ custServiceInstance }}</span> ethernet
-    description CUST <span>{{ circuitID }}</span> SO-<span>{{ serviceOrderID }}</span> <span>{{ customerName }}</span>
-    encapsulation dot1q <span>{{ custVlan }}</span>
-    rewrite ingress tag pop 1 symmetric
-    service-policy input <span>{{ policyMapName }}</span> 
-    bridge-domain <span>{{ custVlan }}</span>
-   !
-  !</template><template v-if="cpe.selectedCPE.name === 'No'">
-  interface GigabitEthernet0/0/1
-   description CUST <span>{{ circuitID }}</span> SO-<span>{{ serviceOrderID }}</span> <span>{{ customerName }}</span>
-   mtu 9180
-   no ip address
-   media-type rj45
-   negotiation auto
-   no keepalive
-   !
-   service instance <span>{{ custServiceInstance }}</span> ethernet
-    description CUST <span>{{ circuitID }}</span> SO-<span>{{ serviceOrderID }}</span> <span>{{ customerName }}</span>
-    encapsulation dot1q <span>{{ custVlan }}</span>
-    rewrite ingress tag pop 1 symmetric
-    service-policy input <span>{{ policyMapName }}</span> 
-    bridge-domain <span>{{ custVlan }}</span>
-   !
-  !</template>
-  interface GigabitEthernet0
-   vrf forwarding Mgmt-intf
-   ip address 192.168.1.1 255.255.255.0
-   shutdown
-   negotiation auto
-  !<template v-if="cpe.selectedCPE.name === 'Yes' || ups.selectedUPS.name === 'Yes'">
-  interface BDI69
-   description MGMT
-   vrf forwarding SYG
-   ip address <span>{{ mgmtUpsGateway }}</span> <span>{{ mgmtUpsSubnetMask }}</span>
-  !</template>
-  interface BDI<span>{{ custVlan }}</span>
-   description DIST <span>{{ circuitID }}</span> SO-<span>{{ serviceOrderID }}</span> <span>{{ customerName }}</span>
-   vrf forwarding <span>{{ customerVRFName }}</span>
-   ip address <span>{{ custBgpIP }}</span> <span>{{ custBgpMask }}</span>
-  !
-  router bgp 15305
-   bgp router-id <span>{{ loopbackIP }}</span>
-   bgp log-neighbor-changes
-   no bgp default ipv4-unicast
-   timers bgp 10 30
-   !
-   address-family vpnv4
-    neighbor 10.16.128.9 activate
-    neighbor 10.16.128.9 send-community extended
-    neighbor 10.16.128.19 activate
-    neighbor 10.16.128.19 send-community extended
-   exit-address-family
-   !
-   address-family ipv4 mdt
-    no bgp nexthop trigger enable
-    neighbor 10.16.128.9 activate
-    neighbor 10.16.128.9 send-community extended
-    neighbor 10.16.128.19 activate
-    neighbor 10.16.128.19 send-community extended
-   exit-address-family
-   !
-   address-family l2vpn vpls
-    neighbor 10.16.128.9 activate
-    neighbor 10.16.128.9 send-community extended
-    neighbor 10.16.128.19 activate
-    neighbor 10.16.128.19 send-community extended
-   exit-address-family
-   !
-   address-family ipv4 vrf <span>{{ customerVRFName }}</span>
-    redistribute connected
-    redistribute static
-    neighbor <span>{{ custBgpPeerIp }}</span> remote-as 65501
-    neighbor <span>{{ custBgpPeerIp }}</span> activate
-    neighbor <span>{{ custBgpPeerIp }}</span> as-override
-    neighbor <span>{{ custBgpPeerIp }}</span> soft-reconfiguration inbound
-   exit-address-family
-   !
-   address-family ipv4 vrf SYG
-    redistribute connected
-    neighbor <span>{{ sygBgpPeerIp }}</span> remote-as 65501
-    neighbor <span>{{ sygBgpPeerIp }}</span> activate
-    neighbor <span>{{ sygBgpPeerIp }}</span> as-override
-    neighbor <span>{{ sygBgpPeerIp }}</span> soft-reconfiguration inbound
-   exit-address-family
-   !
-   address-family ipv6 vrf SYG
-    redistribute connected
-   exit-address-family
-   !<template v-if="voice.selectedVoice.name === 'Yes'">
-   address-family ipv4 vrf SYG_PBX
-    redistribute connected
-    redistribute static
-   exit-address-family
-   !</template>
-  !
+!</template><template v-if="ups.selectedUPS.name === 'No'">
+interface GigabitEthernet0/0/0
+ description UNUSED
+ mtu 9216
+ no ip address
+ media-type rj45
+ negotiation auto
+ shutdown
+!</template><template v-if="cpe.selectedCPE.name === 'Yes'">
+interface GigabitEthernet0/0/1
+ description DIST to <span>{{ cpeHostname }}</span>
+ mtu 9180
+ no ip address
+ media-type rj45
+ negotiation auto
+ no keepalive
+ service instance 69 ethernet
+  description MGMT to <span>{{ cpeHostname }}</span>
+  encapsulation dot1q 69
+  rewrite ingress tag pop 1 symmetric
+  bridge-domain 69
+ !
+ service instance <span>{{ custServiceInstance }}</span> ethernet
+  description CUST <span>{{ circuitID }}</span> SO-<span>{{ serviceOrderID }}</span> <span>{{ customerName }}</span>
+  encapsulation dot1q <span>{{ custVlan }}</span>
+  rewrite ingress tag pop 1 symmetric
+  service-policy input <span>{{ policyMapName }}</span> 
+  bridge-domain <span>{{ custVlan }}</span>
+ !
+!</template><template v-if="cpe.selectedCPE.name === 'No'">
+interface GigabitEthernet0/0/1
+ description CUST <span>{{ circuitID }}</span> SO-<span>{{ serviceOrderID }}</span> <span>{{ customerName }}</span>
+ mtu 9180
+ no ip address
+ media-type rj45
+ negotiation auto
+ no keepalive
+ !
+ service instance <span>{{ custServiceInstance }}</span> ethernet
+  description CUST <span>{{ circuitID }}</span> SO-<span>{{ serviceOrderID }}</span> <span>{{ customerName }}</span>
+  encapsulation dot1q <span>{{ custVlan }}</span>
+  rewrite ingress tag pop 1 symmetric
+  service-policy input <span>{{ policyMapName }}</span> 
+  bridge-domain <span>{{ custVlan }}</span>
+ !
+!</template>
+interface GigabitEthernet0
+ vrf forwarding Mgmt-intf
+ ip address 192.168.1.1 255.255.255.0
+ shutdown
+ negotiation auto
+!<template v-if="cpe.selectedCPE.name === 'Yes' || ups.selectedUPS.name === 'Yes'">
+interface BDI69
+ description MGMT
+ vrf forwarding SYG
+ ip address <span>{{ mgmtUpsGateway }}</span> <span>{{ mgmtUpsSubnetMask }}</span>
+!</template>
+interface BDI<span>{{ custVlan }}</span>
+ description DIST <span>{{ circuitID }}</span> SO-<span>{{ serviceOrderID }}</span> <span>{{ customerName }}</span>
+ vrf forwarding <span>{{ customerVRFName }}</span>
+ ip address <span>{{ custBgpIP }}</span> <span>{{ custBgpMask }}</span>
+!
+router bgp 15305
+ bgp router-id <span>{{ loopbackIP }}</span>
+ bgp log-neighbor-changes
+ no bgp default ipv4-unicast
+ timers bgp 10 30
+ !
+ address-family vpnv4
+  neighbor 10.16.128.9 activate
+  neighbor 10.16.128.9 send-community extended
+  neighbor 10.16.128.19 activate
+  neighbor 10.16.128.19 send-community extended
+ exit-address-family
+ !
+ address-family ipv4 mdt
+  no bgp nexthop trigger enable
+  neighbor 10.16.128.9 activate
+  neighbor 10.16.128.9 send-community extended
+  neighbor 10.16.128.19 activate
+  neighbor 10.16.128.19 send-community extended
+ exit-address-family
+ !
+ address-family l2vpn vpls
+  neighbor 10.16.128.9 activate
+  neighbor 10.16.128.9 send-community extended
+  neighbor 10.16.128.19 activate
+  neighbor 10.16.128.19 send-community extended
+ exit-address-family
+ !
+ address-family ipv4 vrf <span>{{ customerVRFName }}</span>
+  redistribute connected
+  redistribute static
+  neighbor <span>{{ custBgpPeerIp }}</span> remote-as 65501
+  neighbor <span>{{ custBgpPeerIp }}</span> activate
+  neighbor <span>{{ custBgpPeerIp }}</span> as-override
+  neighbor <span>{{ custBgpPeerIp }}</span> soft-reconfiguration inbound
+ exit-address-family
+ !
+ address-family ipv4 vrf SYG
+  redistribute connected
+  neighbor <span>{{ sygBgpPeerIp }}</span> remote-as 65501
+  neighbor <span>{{ sygBgpPeerIp }}</span> activate
+  neighbor <span>{{ sygBgpPeerIp }}</span> as-override
+  neighbor <span>{{ sygBgpPeerIp }}</span> soft-reconfiguration inbound
+ exit-address-family
+ !
+ address-family ipv6 vrf SYG
+  redistribute connected
+ exit-address-family
+ !<template v-if="voice.selectedVoice.name === 'Yes'">
+ address-family ipv4 vrf SYG_PBX
+  redistribute connected
+  redistribute static
+ exit-address-family
+ !</template>
+!
       </code>
     </pre>
 	</div>

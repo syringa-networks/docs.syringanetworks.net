@@ -7,16 +7,10 @@
 				<h6 :class="$style.h6">
 					Is this box 16.9.x with Radius Source in a VRF?
 				</h6>
-				<select
-					:class="$style.select"
-					v-model="radius.selectedRadius"
-				>
-					<option
-						:value="{ id: radius.id, name: radius.name }"
-						v-for="radius in radiusChoice"
-						:key="radius.id"
-						>{{ radius.name }}</option
-					>
+				<select :class="$style.select" v-model="radius.selectedRadius">
+					<option :value="{ id: radius.id, name: radius.name }" v-for="radius in radiusChoice" :key="radius.id">{{
+						radius.name
+					}}</option>
 				</select>
 			</div>
 		</div>
@@ -28,10 +22,7 @@
 			</div>
 			<div>
 				<h6 :class="$style.h6">Trouble Password</h6>
-				<input
-					:class="$style.input"
-					v-model="troublePassword"
-				/>
+				<input :class="$style.input" v-model="troublePassword" />
 			</div>
 			<div>
 				<h6 :class="$style.h6">Radius Server Key</h6>
