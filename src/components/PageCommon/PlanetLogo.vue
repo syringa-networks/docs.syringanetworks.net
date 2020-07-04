@@ -7,72 +7,24 @@
 		xmlns:xlink="http://www.w3.org/1999/xlink"
 	>
 		<defs>
-			<linearGradient
-				x1="-66.65858%"
-				y1="50%"
-				x2="189.010284%"
-				y2="35.0941154%"
-				id="linearGradient-1"
-			>
+			<linearGradient x1="-66.65858%" y1="50%" x2="189.010284%" y2="35.0941154%" id="linearGradient-1">
 				<stop stop-color="#F79533" offset="0%"></stop>
-				<stop
-					stop-color="#F37055"
-					offset="15.2415182%"
-				></stop>
-				<stop
-					stop-color="#EF4E7B"
-					offset="30.0014433%"
-				></stop>
-				<stop
-					stop-color="#A166AB"
-					offset="44.1487038%"
-				></stop>
-				<stop
-					stop-color="#5073B8"
-					offset="57.8817541%"
-				></stop>
-				<stop
-					stop-color="#1098AD"
-					offset="71.9148597%"
-				></stop>
-				<stop
-					stop-color="#07B39B"
-					offset="85.8677455%"
-				></stop>
+				<stop stop-color="#F37055" offset="15.2415182%"></stop>
+				<stop stop-color="#EF4E7B" offset="30.0014433%"></stop>
+				<stop stop-color="#A166AB" offset="44.1487038%"></stop>
+				<stop stop-color="#5073B8" offset="57.8817541%"></stop>
+				<stop stop-color="#1098AD" offset="71.9148597%"></stop>
+				<stop stop-color="#07B39B" offset="85.8677455%"></stop>
 				<stop stop-color="#6DBA82" offset="100%"></stop>
 			</linearGradient>
-			<linearGradient
-				x1="-15.3115143%"
-				y1="100%"
-				x2="129.777911%"
-				y2="-46.7641383%"
-				id="linearGradient-2"
-			>
+			<linearGradient x1="-15.3115143%" y1="100%" x2="129.777911%" y2="-46.7641383%" id="linearGradient-2">
 				<stop stop-color="#F79533" offset="0%"></stop>
-				<stop
-					stop-color="#F37055"
-					offset="15.2415182%"
-				></stop>
-				<stop
-					stop-color="#EF4E7B"
-					offset="30.0014433%"
-				></stop>
-				<stop
-					stop-color="#A166AB"
-					offset="44.1487038%"
-				></stop>
-				<stop
-					stop-color="#5073B8"
-					offset="57.8817541%"
-				></stop>
-				<stop
-					stop-color="#1098AD"
-					offset="71.9148597%"
-				></stop>
-				<stop
-					stop-color="#07B39B"
-					offset="85.8677455%"
-				></stop>
+				<stop stop-color="#F37055" offset="15.2415182%"></stop>
+				<stop stop-color="#EF4E7B" offset="30.0014433%"></stop>
+				<stop stop-color="#A166AB" offset="44.1487038%"></stop>
+				<stop stop-color="#5073B8" offset="57.8817541%"></stop>
+				<stop stop-color="#1098AD" offset="71.9148597%"></stop>
+				<stop stop-color="#07B39B" offset="85.8677455%"></stop>
 				<stop stop-color="#6DBA82" offset="100%"></stop>
 			</linearGradient>
 		</defs>
@@ -85,11 +37,7 @@
 			stroke-linecap="round"
 			stroke-linejoin="round"
 		>
-			<g
-				id="Footer"
-				transform="translate(-1050.000000, -50.000000)"
-				stroke-width="5.18518519"
-			>
+			<g id="Footer" transform="translate(-1050.000000, -50.000000)" stroke-width="5.18518519">
 				<g
 					id="planet-1"
 					transform="translate(1102.000000, 80.000000) rotate(-15.000000) translate(-1102.000000, -80.000000) translate(1049.000000, 50.000000)"

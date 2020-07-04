@@ -2,10 +2,7 @@
 	<main id="content">
 		<page-header>
 			<template slot="title">Global SD-WAN</template>
-			<template slot="subtitle"
-				>SDWAN Configuration for the Global SD-WAN
-				Deployments</template
-			>
+			<template slot="subtitle">SDWAN Configuration for the Global SD-WAN Deployments</template>
 		</page-header>
 		<tabs>
 			<tab :selected="true" name="VRF">

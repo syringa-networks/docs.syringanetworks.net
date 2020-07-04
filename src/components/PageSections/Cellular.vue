@@ -15,10 +15,7 @@
 				<h6 :class="$style.h6">
 					Cellular Interface (0/1/0 or 0/2/0)
 				</h6>
-				<input
-					:class="$style.input"
-					v-model="cellularInterface"
-				/>
+				<input :class="$style.input" v-model="cellularInterface" />
 			</div>
 			<div>
 				<h6 :class="$style.h6">Access Point Name (APN)</h6>
@@ -26,27 +23,24 @@
 			</div>
 			<div>
 				<h6 :class="$style.h6">Profile Number</h6>
-				<input
-					:class="$style.input"
-					v-model="profileNumber"
-				/>
+				<input :class="$style.input" v-model="profileNumber" />
 			</div>
 		</div>
 		<pre>
       <code>
-  cellular <span>{{ cellularInterface }}</span> lte profile create <span>{{ profileNumber }}</span> <span>{{ apn }}</span>
-  !
-  controller Cellular <span>{{ cellularInterface }}</span>
-    lte modem link-recovery disable 
-  ! 
-  chat-script lte "" "AT!CALL1" TIMEOUT 20 "OK"
-  !
-  dialer watch-list 1 ip 5.6.7.8 0.0.0.0
-  dialer watch-list 1 delay route-check initial 60
-  dialer watch-list 1 delay connect 1
-  dialer-list 1 protocol ip permit
-  dialer-list 1 protocol ipv6 permit
-  !
+cellular <span>{{ cellularInterface }}</span> lte profile create <span>{{ profileNumber }}</span> <span>{{ apn }}</span>
+!
+controller Cellular <span>{{ cellularInterface }}</span>
+ lte modem link-recovery disable 
+! 
+chat-script lte "" "AT!CALL1" TIMEOUT 20 "OK"
+!
+dialer watch-list 1 ip 5.6.7.8 0.0.0.0
+dialer watch-list 1 delay route-check initial 60
+dialer watch-list 1 delay connect 1
+dialer-list 1 protocol ip permit
+dialer-list 1 protocol ipv6 permit
+!
       </code>
     </pre>
 	</div>

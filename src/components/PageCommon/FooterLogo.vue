@@ -1,10 +1,6 @@
 <template>
 	<svg :fill="footer.svgFill" :viewBox="footer.svgViewBox">
-		<path
-			v-for="path in footer.svg"
-			:key="path"
-			:d="path"
-		/>
+		<path v-for="path in footer.svg" :key="path" :d="path" />
 	</svg>
 </template>
 

@@ -53,7 +53,7 @@
 
 <script>
 import PageHeader from '@/components/PageCommon/PageHeader';
-import LicensingSection from '../PageSections/RegularLicensing';
+import LicensingSection from '../PageSections/Licensing';
 import VrfSection from '../PageSections/Vrf';
 import AuthenticationSection from '../PageSections/Authentication';
 import ManagementSection from '../PageSections/Management';

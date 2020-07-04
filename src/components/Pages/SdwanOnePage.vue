@@ -2,10 +2,7 @@
 	<main id="content">
 		<page-header>
 			<template slot="title">SDWAN 1.0 Domestic</template>
-			<template slot="subtitle"
-				>SDWAN Configuration for the CPE domestic
-				sites</template
-			>
+			<template slot="subtitle">SDWAN Configuration for the CPE domestic sites</template>
 		</page-header>
 		<tabs>
 			<tab :selected="true" name="Licensing">
@@ -50,7 +47,7 @@
 
 <script>
 import PageHeader from '@/components/PageCommon/PageHeader';
-import LicensingSection from '../PageSections/RegularLicensing';
+import LicensingSection from '../PageSections/Licensing';
 import VrfSection from '../PageSections/Vrf';
 import AuthenticationSection from '../PageSections/Authentication';
 import ManagementSection from '../PageSections/Management';

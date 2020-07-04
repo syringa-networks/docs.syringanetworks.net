@@ -31,38 +31,38 @@
 		</div>
 		<pre>
       <code>
-  hostname <span>{{ hostName }}</span>
-  !
-  username trouble privilege 15 secret <span>{{ troublePassword }}</span>
-  !
-  aaa new-model
-  !<template v-if="radius.selectedRadius.name === 'Yes'">
-  aaa group server radius RAD-SERVER
-   server name RADIUS
-   ip vrf forwarding SYG
-  !
-  aaa authentication login default group RAD-SERVER local
-  aaa authorization exec default group RAD-SERVER local
-  !</template><template v-if="radius.selectedRadius.name === 'No'">
-  aaa authentication login default group radius local
-  aaa authorization exec default group radius local
-  aaa authorization network default local 
-  !</template>
-  aaa session-id common
-  !
-  interface lo0
-    vrf forwarding SYG
-  !
-  ip radius source-interface Loopback0 vrf SYG
-  !
-  radius-server retry method reorder
-  radius-server retransmit 1
-  radius-server timeout 1
-  radius-server key <span>{{ radiusKey }}</span>
-  !
-  radius server RADIUS
-    address ipv4 192.168.80.132 auth-port 1645 acct-port 1646
-  !
+hostname <span>{{ hostName }}</span>
+!
+username trouble privilege 15 secret <span>{{ troublePassword }}</span>
+!
+aaa new-model
+!<template v-if="radius.selectedRadius.name === 'Yes'">
+aaa group server radius RAD-SERVER
+ server name RADIUS
+ ip vrf forwarding SYG
+!
+aaa authentication login default group RAD-SERVER local
+aaa authorization exec default group RAD-SERVER local
+!</template><template v-if="radius.selectedRadius.name === 'No'">
+aaa authentication login default group radius local
+aaa authorization exec default group radius local
+aaa authorization network default local 
+!</template>
+aaa session-id common
+!
+interface lo0
+ vrf forwarding SYG
+!
+ip radius source-interface Loopback0 vrf SYG
+!
+radius-server retry method reorder
+radius-server retransmit 1
+radius-server timeout 1
+radius-server key <span>{{ radiusKey }}</span>
+!
+radius server RADIUS
+ address ipv4 192.168.80.132 auth-port 1645 acct-port 1646
+!
       </code>
     </pre>
 	</div>

@@ -7,16 +7,8 @@
 			<div>
 				<h2>{{ footer.title }}</h2>
 				<ul :class="$style.footerNav">
-					<li
-						:key="link.name"
-						v-for="link in footer.externalLinks"
-					>
-						<a
-							:href="link.url"
-							:target="link.target"
-							:class="$style.navLink"
-							>{{ link.name }}</a
-						>
+					<li :key="link.name" v-for="link in footer.externalLinks">
+						<a :href="link.url" :target="link.target" :class="$style.navLink">{{ link.name }}</a>
 					</li>
 				</ul>
 			</div>
