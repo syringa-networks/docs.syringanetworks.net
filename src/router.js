@@ -22,10 +22,7 @@ const routes = [
 	{
 		path: '/vpe',
 		name: 'vpe',
-		component: () =>
-			import(
-				/* webpackChunkName: "azure" */ './views/Vpe.vue'
-			)
+		component: () => import(/* webpackChunkName: "azure" */ './views/Vpe.vue')
 	},
 	{
 		path: '/sdwan-global',
@@ -50,34 +47,22 @@ const routes = [
 	{
 		path: '/qos',
 		name: 'qos',
-		component: () =>
-			import(
-				/* webpackChunkName: "qos" */ './views/Qos.vue'
-			)
+		component: () => import(/* webpackChunkName: "qos" */ './views/Qos.vue')
 	},
 	{
 		path: '/qos/phase-one',
 		name: 'qos-phase-one',
-		component: () =>
-			import(
-				/* webpackChunkName: "qos" */ './views/QosPhaseOne.vue'
-			)
+		component: () => import(/* webpackChunkName: "qos" */ './views/QosPhaseOne.vue')
 	},
 	{
 		path: '/asr-920',
 		name: 'asr-920',
-		component: () =>
-			import(
-				/* webpackChunkName: "asr-920" */ './views/Asr920.vue'
-			)
+		component: () => import(/* webpackChunkName: "asr-920" */ './views/Asr920.vue')
 	},
 	{
 		path: '/ncs-520',
 		name: 'ncs-520',
-		component: () =>
-			import(
-				/* webpackChunkName: "ncs-520" */ './views/Ncs520.vue'
-			)
+		component: () => import(/* webpackChunkName: "ncs-520" */ './views/Ncs520.vue')
 	}
 ];
 

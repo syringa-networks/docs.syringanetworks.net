@@ -8,45 +8,36 @@
 			</div>
 			<div>
 				<h6 :class="$style.h6">Secondary ISP VRF/ACL</h6>
-				<input
-					:class="$style.input"
-					v-model="secondaryIsp"
-				/>
+				<input :class="$style.input" v-model="secondaryIsp" />
 			</div>
 			<div>
 				<h6 :class="$style.h6">Primary ISP Interface</h6>
-				<input
-					:class="$style.input"
-					v-model="primaryIspInterface"
-				/>
+				<input :class="$style.input" v-model="primaryIspInterface" />
 			</div>
 			<div>
 				<h6 :class="$style.h6">Secondary ISP Interface</h6>
-				<input
-					:class="$style.input"
-					v-model="secondaryIspInterface"
-				/>
+				<input :class="$style.input" v-model="secondaryIspInterface" />
 			</div>
 		</div>
 		<pre>
         <code>
-  ip nat inside source route-map <span>{{ primaryIsp }}</span> interface <span>{{ primaryIspInterface }}</span> vrf CUST overload
-  ip nat inside source route-map <span>{{ secondaryIsp }}</span> interface <span>{{ secondaryIspInterface }}</span> vrf CUST overload
-  !
-  ip access-list extended <span>{{ primaryIsp }}</span>
-    permit ip any any
-  !
-  ip access-list extended <span>{{ secondaryIsp }}</span>
-    permit ip any any
-  !
-  route-map <span>{{ primaryIsp }}</span> permit 10
-    match ip address <span>{{ primaryIsp }}</span>
-    match interface <span>{{ primaryIspInterface }}</span>
-  !
-  route-map <span>{{ secondaryIsp }}</span> permit 10
-    match ip address <span>{{ secondaryIsp }}</span>
-    match interface <span>{{ secondaryIspInterface }}</span>
-  !
+ip nat inside source route-map <span>{{ primaryIsp }}</span> interface <span>{{ primaryIspInterface }}</span> vrf CUST overload
+ip nat inside source route-map <span>{{ secondaryIsp }}</span> interface <span>{{ secondaryIspInterface }}</span> vrf CUST overload
+!
+ip access-list extended <span>{{ primaryIsp }}</span>
+ permit ip any any
+!
+ip access-list extended <span>{{ secondaryIsp }}</span>
+ permit ip any any
+!
+route-map <span>{{ primaryIsp }}</span> permit 10
+ match ip address <span>{{ primaryIsp }}</span>
+ match interface <span>{{ primaryIspInterface }}</span>
+!
+route-map <span>{{ secondaryIsp }}</span> permit 10
+ match ip address <span>{{ secondaryIsp }}</span>
+ match interface <span>{{ secondaryIspInterface }}</span>
+!
         </code>
       </pre>
 	</div>

@@ -1,6 +1,6 @@
 {
-	"name": "syglab.net",
-	"version": "0.2.0",
+	"name": "docs.syringanetworks.net",
+	"version": "1.2.0",
 	"private": true,
 	"scripts": {
 		"serve": "vue-cli-service serve",
