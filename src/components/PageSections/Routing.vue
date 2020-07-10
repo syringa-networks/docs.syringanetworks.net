@@ -25,13 +25,13 @@
 		</div>
 		<pre>
       <code>
-  ip route vrf ISP2 66.232.64.82 255.255.255.255 <span>{{ cellularInterface }}</span>
-  ip route vrf ISP2 66.232.64.83 255.255.255.255 <span>{{ cellularInterface }}</span>
-  ip route vrf ISP2 67.215.44.4 255.255.255.255 <span>{{ cellularInterface }}</span>
-  !
-  ip route vrf ISP1 0.0.0.0 0.0.0.0 <span>{{ nextHop }}</span>
-  ip route vrf ISP2 0.0.0.0 0.0.0.0 <span>{{ cellularInterface }}</span>
-  !
+ip route vrf ISP2 66.232.64.82 255.255.255.255 <span>{{ cellularInterface }}</span>
+ip route vrf ISP2 66.232.64.83 255.255.255.255 <span>{{ cellularInterface }}</span>
+ip route vrf ISP2 67.215.44.4 255.255.255.255 <span>{{ cellularInterface }}</span>
+!
+ip route vrf ISP1 0.0.0.0 0.0.0.0 <span>{{ nextHop }}</span>
+ip route vrf ISP2 0.0.0.0 0.0.0.0 <span>{{ cellularInterface }}</span>
+!
       </code>
     </pre>
 	</div>

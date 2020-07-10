@@ -26,40 +26,40 @@
 		</div>
 		<pre>
       <code>
-  interface GigabitEthernet0/0/0
-    description DIST to External vrf ISP1
-    vrf forwarding ISP1
-    ip address <span>{{ outsideIP }}</span>
-    ip nat outside
-    no shutdown
-    negotiation auto
-  !
-  interface GigabitEthernet0/0/1
-    description CUST to Internal vrf CUST
-    vrf forwarding CUST
-    ip address <span>{{ insideIP }}</span>
-    ip helper-address 10.10.4.12
-    ip helper-address 10.12.4.14
-    ip nat inside
-    no shutdown
-    negotiation auto
-  !
-  interface Cellular<span>{{ cellularInterface }}</span>
-    vrf forwarding ISP2
-    ip address negotiated
-    dialer in-band
-    dialer idle-timeout 0
-    dialer watch-group 1
-    dialer-group 1
-    ipv6 enable
-    pulse-time 1
-    no shutdown
-  !
-  interface Loopback0
-    description MGMT to Loopback vrf SYG
-    vrf forwarding SYG
-    ip address <span>{{ loopIP }}</span>
-  !
+interface GigabitEthernet0/0/0
+ description DIST to External vrf ISP1
+ vrf forwarding ISP1
+ ip address <span>{{ outsideIP }}</span>
+ ip nat outside
+ no shutdown
+ negotiation auto
+!
+interface GigabitEthernet0/0/1
+ description CUST to Internal vrf CUST
+ vrf forwarding CUST
+ ip address <span>{{ insideIP }}</span>
+ ip helper-address 10.10.4.12
+ ip helper-address 10.12.4.14
+ ip nat inside
+ no shutdown
+ negotiation auto
+!
+interface Cellular<span>{{ cellularInterface }}</span>
+ vrf forwarding ISP2
+ ip address negotiated
+ dialer in-band
+ dialer idle-timeout 0
+ dialer watch-group 1
+ dialer-group 1
+ ipv6 enable
+ pulse-time 1
+ no shutdown
+!
+interface Loopback0
+ description MGMT to Loopback vrf SYG
+ vrf forwarding SYG
+ ip address <span>{{ loopIP }}</span>
+!
       </code>
     </pre>
 	</div>
