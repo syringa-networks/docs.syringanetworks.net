@@ -18,6 +18,10 @@
 				<h6>Crypto Server Password</h6>
 				<input v-model="cryptoPassword" />
 			</div>
+			<div>
+				<h6>Cert Enable Password</h6>
+				<input v-model="enablePassword" />
+			</div>
 		</div>
 		<pre>
       <code>
@@ -83,8 +87,9 @@ export default {
 		const primaryVrf = 'ISP1';
 		const backupVrf = 'ISP2';
 		const cryptoPassword = 'yfW?BWEmvc@^9w9D';
+		const enablePassword = 'oLOw8RI3rLIZ';
 
-		return { certVrf, primaryVrf, backupVrf, cryptoPassword };
+		return { certVrf, primaryVrf, backupVrf, cryptoPassword, enablePassword };
 	}
 };
 </script>
