@@ -26,10 +26,7 @@ export default {
 		<div :class="$style.inputFlex">
 			<div>
 				<h6 :class="$style.h6">SNMP Location</h6>
-				<input
-					:class="$style.input"
-					v-model="snmpLocation"
-				/>
+				<input :class="$style.input" v-model="snmpLocation" />
 			</div>
 			<div>
 				<h6 :class="$style.h6">Hostname</h6>
@@ -45,17 +42,11 @@ export default {
 			</div>
 			<div>
 				<h6 :class="$style.h6">SYG DEFAULT ROUTE</h6>
-				<input
-					:class="$style.input"
-					v-model="sygDefaultRoute"
-				/>
+				<input :class="$style.input" v-model="sygDefaultRoute" />
 			</div>
 			<div>
 				<h6 :class="$style.h6">CUST DEFAULT ROUTE</h6>
-				<input
-					:class="$style.input"
-					v-model="custDefaultRoute"
-				/>
+				<input :class="$style.input" v-model="custDefaultRoute" />
 			</div>
 		</div>
 		<pre>
@@ -357,7 +348,7 @@ export default {
                       &lt;member&gt;any&lt;/member&gt;
                     &lt;/application&gt;
                     &lt;service&gt;
-                      &lt;member&gt;application-default&lt;/member&gt;
+                      &lt;member&gt;any&lt;/member&gt;
                     &lt;/service&gt;
                     &lt;hip-profiles&gt;
                       &lt;member&gt;any&lt;/member&gt;
@@ -723,6 +714,7 @@ export default {
                 &lt;static&gt;
                   &lt;member&gt;10_NET&lt;/member&gt;
                   &lt;member&gt;172.16_NET&lt;/member&gt;
+                  &lt;member&gt;192.168_NET&lt;/member&gt;
                 &lt;/static&gt;
               &lt;/entry&gt;
             &lt;/address-group&gt;
@@ -851,7 +843,7 @@ export default {
                     &lt;/entry&gt;
                   &lt;/units&gt;
                 &lt;/layer3&gt;
-                &lt;comment&gt;MGMT to 4331&lt;/comment&gt;
+                &lt;comment&gt;MGMT to 1111&lt;/comment&gt;
               &lt;/entry&gt;
             &lt;/ethernet&gt;
             &lt;loopback&gt;
