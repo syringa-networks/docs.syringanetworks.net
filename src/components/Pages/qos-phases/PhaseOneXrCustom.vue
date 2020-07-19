@@ -1,66 +1,38 @@
 <template>
 	<div>
-		<div :class="$style.inputFlex">
-			<h3 :class="$style.h3">IOS-XR CUSTOM Policies</h3>
+		<div class="inputFlex">
+			<h3>IOS-XR CUSTOM Policies</h3>
 			<div>
-				<h6 :class="$style.h6">INBOUND Policy-Map Name</h6>
-				<input
-					:class="$style.input"
-					v-model="customInboundPolicy"
-				/>
+				<h6>INBOUND Policy-Map Name</h6>
+				<input v-model="customInboundPolicy" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">INBOUND Marking</h6>
-				<input
-					:class="$style.input"
-					v-model="customInboundPolicyMarking"
-				/>
+				<h6>INBOUND Marking</h6>
+				<input v-model="customInboundPolicyMarking" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">INBOUND Policing</h6>
-				<input
-					:class="$style.input"
-					v-model="customInboundPolicyPolicing"
-				/>
-				<select
-					:class="$style.select"
-					v-model="customPolicingThroughput"
-				>
-					<option disabled value=""
-						>Policing Throughput</option
-					>
+				<h6>INBOUND Policing</h6>
+				<input v-model="customInboundPolicyPolicing" />
+				<select v-model="customPolicingThroughput">
+					<option disabled value="">Policing Throughput</option>
 					<option>{{ kbps }}</option>
 					<option>{{ mbps }}</option>
 					<option>{{ gbps }}</option>
 				</select>
 			</div>
 			<div>
-				<h6 :class="$style.h6">OUTBOUND Policy-Map</h6>
-				<input
-					:class="$style.input"
-					v-model="customOutboundPolicy"
-				/>
+				<h6>OUTBOUND Policy-Map</h6>
+				<input v-model="customOutboundPolicy" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">OUTBOUND Queuing</h6>
-				<input
-					:class="$style.input"
-					v-model="customOutboundPolicyQueuing"
-				/>
+				<h6>OUTBOUND Queuing</h6>
+				<input v-model="customOutboundPolicyQueuing" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">OUTBOUND Shaping</h6>
-				<input
-					:class="$style.input"
-					v-model="customOutboundPolicyShaping"
-				/>
-				<select
-					:class="$style.select"
-					v-model="customShapingThroughput"
-				>
-					<option disabled value=""
-						>Shaping Throughput</option
-					>
+				<h6>OUTBOUND Shaping</h6>
+				<input v-model="customOutboundPolicyShaping" />
+				<select v-model="customShapingThroughput">
+					<option disabled value="">Shaping Throughput</option>
 					<option>{{ kbps }}</option>
 					<option>{{ mbps }}</option>
 					<option>{{ gbps }}</option>
@@ -142,34 +114,25 @@
         </code>
 		  </pre>
 		</div>
-		<div :class="$style.inputFlex">
-			<h3 :class="$style.h3">
+		<div class="inputFlex">
+			<h3>
 				IOS-XR Interface Configuration
 			</h3>
 			<div>
-				<h6 :class="$style.h6">Interface Ingress</h6>
-				<input
-					:class="$style.input"
-					v-model="customInboundInterface"
-				/>
+				<h6>Interface Ingress</h6>
+				<input v-model="customInboundInterface" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">
+				<h6>
 					Interface Ingress Service Instance
 				</h6>
-				<input
-					:class="$style.input"
-					v-model="customInboundServiceInstance"
-				/>
+				<input v-model="customInboundServiceInstance" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">
+				<h6>
 					Interface Ingress Service Instance VLAN
 				</h6>
-				<input
-					:class="$style.input"
-					v-model="customInboundServiceInstanceVlan"
-				/>
+				<input v-model="customInboundServiceInstanceVlan" />
 			</div>
 			<pre>
         <code>
@@ -196,27 +159,11 @@ export default {
 
 		const customBcCalculation = computed(() => {
 			if (customPolicingThroughput.value === 'kbps') {
-				return (
-					((customInboundPolicyPolicing.value * 1000) / 8) *
-					0.05
-				);
-			} else if (
-				customPolicingThroughput.value === 'mbps'
-			) {
-				return (
-					((customInboundPolicyPolicing.value * 1000000) /
-						8) *
-					0.05
-				);
-			} else if (
-				customPolicingThroughput.value === 'gbps'
-			) {
-				return (
-					((customInboundPolicyPolicing.value *
-						1000000000) /
-						8) *
-					0.05
-				);
+				return ((customInboundPolicyPolicing.value * 1000) / 8) * 0.05;
+			} else if (customPolicingThroughput.value === 'mbps') {
+				return ((customInboundPolicyPolicing.value * 1000000) / 8) * 0.05;
+			} else if (customPolicingThroughput.value === 'gbps') {
+				return ((customInboundPolicyPolicing.value * 1000000000) / 8) * 0.05;
 			} else {
 				return null;
 			}
@@ -265,73 +212,10 @@ export default {
 </script>
 
 <style lang="stylus" module>
-.h3 {
-  padding: 4rem;
-  margin-left: -4rem;
-  margin-right: -4rem;
-  margin-top: -3rem;
-  color: var(--color-white);
-  background-color: var(--color-orange-5);
-}
-
 .listDiv {
-  color: var(--color-dark-1);
-  border: solid 0.2rem var(--color-dark-1);
+  color: var(--color-dark);
+  border: solid 0.2rem var(--color-dark);
   padding: 3rem;
   margin-bottom: 3rem;
-}
-
-.inputFlex {
-  display: flex;
-  flex-direction: column;
-  padding: 3rem 4rem;
-  border: 2px solid var(--color-orange-5);
-  margin-bottom: 2rem;
-
-  div {
-    margin-bottom: 2rem;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  .h6 {
-    font-family: 'Source Code Pro';
-    text-transform: none;
-    color: var(--color-orange-5);
-    font-weight: 400;
-    letter-spacing: 0.25px;
-    font-size: 16px;
-  }
-
-  input {
-    width: 35%;
-  }
-}
-
-.input {
-  color: rgba(0, 0, 0, 0.2);
-  background: var(--color-white);
-  border: 1px solid var(--color-orange-5);
-  padding: 1rem;
-  margin-bottom: 1rem;
-
-  &:focus {
-    color: rgba(0, 0, 0, 0.8);
-    outline: none;
-  }
-}
-
-.select {
-  color: rgba(0, 0, 0, 0.2);
-  background: var(--color-white);
-  border: 1px solid var(--color-orange-5);
-  margin-left: 1rem;
-
-  &:focus {
-    color: rgba(0, 0, 0, 0.8);
-    outline: none;
-  }
 }
 </style>

@@ -77,8 +77,8 @@ export default {
 <style lang="stylus" module>
 .table {
   position: relative;
-  color: var(--color-dark-2);
-  border: 3px solid var(--color-dark-2);
+  color: var(--color-dark);
+  border: 3px solid var(--color-dark);
   border-radius: 4px;
   width: 100%;
   text-align: left;
@@ -93,7 +93,7 @@ export default {
     display: block;
     width: 100%;
     height: 3px;
-    background: var(--color-dark-2);
+    background: var(--color-dark);
   }
 }
 </style>

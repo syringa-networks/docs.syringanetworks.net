@@ -22,31 +22,31 @@ export default {
 
 <template>
 	<div>
-		<h3 :class="$style.h3">Palo Alto Configuration</h3>
-		<div :class="$style.inputFlex">
+		<h3>Palo Alto Configuration</h3>
+		<div class="inputFlex">
 			<div>
-				<h6 :class="$style.h6">SNMP Location</h6>
-				<input :class="$style.input" v-model="snmpLocation" />
+				<h6>SNMP Location</h6>
+				<input v-model="snmpLocation" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">Hostname</h6>
-				<input :class="$style.input" v-model="hostName" />
+				<h6>Hostname</h6>
+				<input v-model="hostName" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">SYG MGMT IP</h6>
-				<input :class="$style.input" v-model="sygMgmtIp" />
+				<h6>SYG MGMT IP</h6>
+				<input v-model="sygMgmtIp" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">CUST MGMT IP</h6>
-				<input :class="$style.input" v-model="custMgmtIp" />
+				<h6>CUST MGMT IP</h6>
+				<input v-model="custMgmtIp" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">SYG DEFAULT ROUTE</h6>
-				<input :class="$style.input" v-model="sygDefaultRoute" />
+				<h6>SYG DEFAULT ROUTE</h6>
+				<input v-model="sygDefaultRoute" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">CUST DEFAULT ROUTE</h6>
-				<input :class="$style.input" v-model="custDefaultRoute" />
+				<h6>CUST DEFAULT ROUTE</h6>
+				<input v-model="custDefaultRoute" />
 			</div>
 		</div>
 		<pre>
@@ -1325,54 +1325,3 @@ export default {
     </pre>
 	</div>
 </template>
-
-<style lang="stylus" module>
-.h3 {
-  padding: 4rem;
-  margin-top: -3rem;
-  color: var(--color-white);
-  background-image: var(--gradient-rainbow);
-}
-
-.inputFlex {
-  display: flex;
-  flex-direction: column;
-  padding: 3rem 4rem;
-  border: 2px solid var(--color-orange-5);
-  margin-bottom: 2rem;
-
-  div {
-    margin-bottom: 2rem;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  .h6 {
-    font-family: 'Source Code Pro';
-    text-transform: none;
-    color: var(--color-orange-5);
-    font-weight: 400;
-    letter-spacing: 0.25px;
-    font-size: 16px;
-  }
-
-  input {
-    width: 35%;
-  }
-}
-
-.input {
-  color: rgba(0, 0, 0, 0.2);
-  background: var(--color-white);
-  border: 1px solid var(--color-orange-5);
-  padding: 1rem;
-  margin-bottom: 1rem;
-
-  &:focus {
-    color: rgba(0, 0, 0, 0.8);
-    outline: none;
-  }
-}
-</style>

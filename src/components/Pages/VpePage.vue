@@ -1,12 +1,9 @@
 <template>
 	<main id="content">
 		<page-header>
-			<template slot="title"
-				>Azure VPE Configuration</template
-			>
+			<template slot="title">Azure/AWS VPE Configuration</template>
 			<template slot="subtitle">
-				How to configure DMVPN over ISIS over OSPF over BGP
-				over MPLS over LTE with VRFs.
+				How to configure the CSRv routers in Azure and AWS.
 			</template>
 		</page-header>
 		<tabs>

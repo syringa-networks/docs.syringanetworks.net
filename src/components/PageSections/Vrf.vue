@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<h3 :class="$style.h3">VRF Config</h3>
+		<h3>VRF Config</h3>
 		<pre>
       <code>
 vrf definition ISP1
@@ -51,16 +51,3 @@ vrf definition SYG
     </pre>
 	</div>
 </template>
-
-<script>
-export default {};
-</script>
-
-<style lang="stylus" module>
-.h3 {
-  padding: 4rem;
-  margin-top: -3rem;
-  color: var(--color-white);
-  background-image: var(--gradient-rainbow);
-}
-</style>

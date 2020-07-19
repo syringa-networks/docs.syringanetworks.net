@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<h3 :class="$style.h3">IOS-XE Show Commands</h3>
+		<h3>IOS-XE Show Commands</h3>
 		<pre>
       <code>
   <span>// Show the running config on the interface in question</span>
@@ -299,12 +299,3 @@
     </pre>
 	</div>
 </template>
-
-<style lang="stylus" module>
-.h3 {
-  padding: 4rem;
-  margin-top: -3rem;
-  color: var(--color-white);
-  background-image: var(--gradient-rainbow);
-}
-</style>

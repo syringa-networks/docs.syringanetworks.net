@@ -1,7 +1,7 @@
 <template>
-	<header :class="$style.siteHeader">
+	<header class="siteHeader">
 		<div :class="$style.siteHeaderInner">
-			<div :class="$style.logo">
+			<div class="logo">
 				<router-link :class="$style.logoA" :to="{ name: 'home' }">
 					<site-logo></site-logo>
 				</router-link>
@@ -17,7 +17,7 @@
 							tag="li"
 							v-for="link in header.navList"
 						>
-							<a ref="navRef" :class="$style.navigationListAnchor">{{ link.name }}</a>
+							<a ref="navRef" class="navigationListAnchor">{{ link.name }}</a>
 						</router-link>
 					</ul>
 				</div>
@@ -53,16 +53,6 @@ export default {
 </script>
 
 <style lang="stylus" module>
-.siteHeader {
-  grid-column: 1;
-  grid-row: 1;
-  position: sticky;
-  top: 0;
-  height: 100vmin;
-  z-index: 10;
-  border-right: 0.1rem solid rgba(247, 92, 3, 0.3);
-}
-
 .siteHeaderInner {
   justify-content: space-between;
   height: 100%;
@@ -99,13 +89,6 @@ export default {
   }
 }
 
-.logo {
-  width: 100%;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  border-bottom: 0.1rem solid rgba(247, 92, 3, 0.3);
-}
-
 .logoA {
   display: flex;
   justify-content: flex-end;
@@ -128,36 +111,5 @@ export default {
   text-align: right;
   margin-right: 3rem;
   margin-bottom: 0;
-}
-
-.navigationListAnchor {
-  position: relative;
-  padding-bottom: 0.5rem;
-  text-transform: uppercase;
-  overflow: hidden;
-  transition: 0.3s;
-  opacity: 0;
-
-  &:after {
-    position: absolute;
-    transition: 0.3s;
-    content: '';
-    width: 0;
-    left: 50%;
-    bottom: 0;
-    height: 3px;
-    background: var(--color-orange-5);
-    right: 0;
-    left: auto;
-  }
-
-  &:hover {
-    cursor: pointer;
-
-    &:after {
-      width: 100%;
-      left: 0;
-    }
-  }
 }
 </style>

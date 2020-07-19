@@ -2,9 +2,7 @@
 	<main id="content">
 		<page-header>
 			<template slot="title">QoS Overview</template>
-			<template slot="subtitle"
-				>QoS Overview for Syringa Networks</template
-			>
+			<template slot="subtitle">QoS Overview for Syringa Networks</template>
 		</page-header>
 		<tabs>
 			<tab :selected="true" name="Overview">

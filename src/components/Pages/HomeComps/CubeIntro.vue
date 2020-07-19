@@ -4,7 +4,6 @@ export default {
 	mounted() {
 		const tl = new TimelineMax();
 		const { cubeIntro } = this.$refs;
-
 		tl.from(cubeIntro, 1.5, {
 			opacity: 0,
 			delay: 1
@@ -31,22 +30,11 @@ export default {
 </style>
 
 <template>
-	<svg
-		:class="$style.svg"
-		ref="cubeIntro"
-		viewBox="0 0 35 46"
-		xmlns="http://www.w3.org/2000/svg"
-	>
+	<svg :class="$style.svg" ref="cubeIntro" viewBox="0 0 35 46" xmlns="http://www.w3.org/2000/svg">
 		<defs>
-			<linearGradient
-				x1="-1.821%"
-				y1="49.974%"
-				x2="101.98%"
-				y2="49.974%"
-				id="a"
-			>
-				<stop stop-color="#F79433" offset="0%" />
-				<stop stop-color="#F37029" offset="100%" />
+			<linearGradient x1="-1.821%" y1="49.974%" x2="101.98%" y2="49.974%" id="a">
+				<stop class="homeCube" offset="0%" />
+				<stop class="homeCube" offset="100%" />
 			</linearGradient>
 		</defs>
 		<path

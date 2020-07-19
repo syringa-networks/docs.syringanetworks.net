@@ -42,7 +42,7 @@ export default {
   grid-column: 2 / -1;
   width: 100%;
   position: relative;
-  background: var(--color-dark-4);
+  background: var(--color-dark);
   padding-top: 10rem;
   padding-bottom: 10rem;
   z-index: 3;

@@ -2,22 +2,18 @@
 	<div>
 		<h3>QoS Overview</h3>
 		<p>
-			We are upgrading to more and more 100G links both in
-			the CORE and backhaul from remote PoPs.
+			We are upgrading to more and more 100G links both in the CORE and backhaul from remote PoPs.
 		</p>
 		<p>
-			QoS will allow us to make better use of these more
-			expensive 100G links, by combining services (Carrier,
-			Voice, Enterprise, Internet, etc) on these links.
+			QoS will allow us to make better use of these more expensive 100G links, by combining services (Carrier, Voice,
+			Enterprise, Internet, etc) on these links.
 		</p>
 		<p>
-			In the past we have thrown bandwidth and dedicated
-			links at the issue, VZW Overlay. This was quicker and
-			simpler to accomplish at the expense of cost.
+			In the past we have thrown bandwidth and dedicated links at the issue, VZW Overlay. This was quicker and simpler
+			to accomplish at the expense of cost.
 		</p>
 		<p>
-			Finally with the QoS design it should give us a way to
-			help mitigate DDoS attacks.
+			Finally with the QoS design it should give us a way to help mitigate DDoS attacks.
 		</p>
 		<qos-precedence></qos-precedence>
 		<h3>QoS Implementation</h3>
@@ -69,8 +65,7 @@ export default {
 	setup() {
 		const implementation = [
 			{
-				name:
-					'Mark all customer traffic on the ingress PE Router with EXP bits'
+				name: 'Mark all customer traffic on the ingress PE Router with EXP bits'
 			},
 			{
 				name: 'Add Queueing to MPLS links'
@@ -79,8 +74,7 @@ export default {
 				name: 'Access Rings'
 			},
 			{
-				name:
-					'Go back to PE routers and create the appropriate COS to EXP and EXP to COS maps'
+				name: 'Go back to PE routers and create the appropriate COS to EXP and EXP to COS maps'
 			}
 		];
 		const limitation = [
@@ -91,8 +85,7 @@ export default {
 				name: "3400 - Can't police the priority queue"
 			},
 			{
-				name:
-					'3400/901 - Recommend not using in blended rings (Carrier and Enterprise)'
+				name: '3400/901 - Recommend not using in blended rings (Carrier and Enterprise)'
 			},
 			{
 				name: '901 - Limited to 6 total output queues'
@@ -101,12 +94,10 @@ export default {
 				name: '901 - Limited to only 1 priority queue'
 			},
 			{
-				name:
-					'920/3600/903 - Limited to 2 priority queues (new code on the 920s enables 7 Priority Queues)'
+				name: '920/3600/903 - Limited to 2 priority queues (new code on the 920s enables 7 Priority Queues)'
 			},
 			{
-				name:
-					'5500 (HQoS Enabled) - Limited to 4 priority queues'
+				name: '5500 (HQoS Enabled) - Limited to 4 priority queues'
 			}
 		];
 		const description = [
@@ -119,12 +110,10 @@ export default {
 					'5 - Carrier and Voice traffic is any customer we define as a carrier, mostly cell backhaul, and our own Voice customers'
 			},
 			{
-				name:
-					'4 - Enterprise Realtime Data is customer Voice, video conferencing, etc (EF, CS5, AF41, CS4)'
+				name: '4 - Enterprise Realtime Data is customer Voice, video conferencing, etc (EF, CS5, AF41, CS4)'
 			},
 			{
-				name:
-					'3 - Enterprise Critical Data is customer traffic deemed mission critical (CS6, CS2, CS3, DSCP 25, AF31)'
+				name: '3 - Enterprise Critical Data is customer traffic deemed mission critical (CS6, CS2, CS3, DSCP 25, AF31)'
 			},
 			{
 				name:
@@ -135,18 +124,15 @@ export default {
 					"1 - Enterprise Best Effort is customer traffic that doesn't need any special priority over other traffic (BE)"
 			},
 			{
-				name:
-					'0 - Internet Customers and Enterprise Scavenger Class'
+				name: '0 - Internet Customers and Enterprise Scavenger Class'
 			}
 		];
 		const strategy = [
 			{
-				name:
-					'EXP bits will be used on MPLS links to mark, classify and queue traffic'
+				name: 'EXP bits will be used on MPLS links to mark, classify and queue traffic'
 			},
 			{
-				name:
-					'COS bits will be used on layer 2 access rings to mark, classify, and queue traffic'
+				name: 'COS bits will be used on layer 2 access rings to mark, classify, and queue traffic'
 			},
 			{
 				name:
@@ -206,7 +192,7 @@ export default {
   margin-bottom: 3rem;
 
   li {
-    color: var(--color-dark-2);
+    color: var(--color-dark);
   }
 }
 </style>

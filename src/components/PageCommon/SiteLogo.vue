@@ -1,6 +1,6 @@
 <template>
 	<transition appear @before-enter="beforeEnter" @enter="enter" :css="false">
-		<svg :class="$style.svg" :fill="svgFill" :viewBox="viewBox" ref="siteLogo">
+		<svg class="siteLogoVector" :viewBox="viewBox" ref="siteLogo">
 			<path
 				d="M18.82,12.67,16.9,15.6a10.67,10.67,0,0,0-6.53-2.3c-2.88,0-4.66,1.29-4.66,3.31s1.35,3,5.43,4.08c5.32,1.34,8.4,3.46,8.4,7.87,0,5.28-4.85,7.68-10,7.68A14,14,0,0,1,0,32.93l2.45-2.78a10.56,10.56,0,0,0,7,2.54c3.31,0,5.42-1.49,5.42-3.7,0-2.64-1.25-3.6-6.14-4.89C3.26,22.66,1.1,20.31,1.1,16.71c0-4,3.89-6.92,9.12-6.92A13.46,13.46,0,0,1,18.82,12.67Z"
 			/>
@@ -31,11 +31,9 @@ import gsap from 'gsap';
 
 export default {
 	setup() {
-		const svgFill = 'var(--color-orange-5)';
 		const viewBox = '0 0 151.41 45.89';
 
 		return {
-			svgFill,
 			viewBox
 		};
 	},
@@ -47,30 +45,9 @@ export default {
 			gsap.to(el, {
 				duration: 1.5,
 				opacity: 1,
-				ease: 'bounce.out',
 				onComplete: done
 			});
 		}
 	}
-	// mounted() {
-	// 	const { siteLogo } = this.$refs;
-
-	// 	gsap.from(siteLogo, 1.5, {
-	// 		opacity: 0,
-	//    onComplete: done
-	// 	});
-	// }
 };
 </script>
-
-<style lang="stylus" module>
-.svg {
-  padding-right: 3rem;
-  flex-basis: 50%;
-  transition: fill 0.25s;
-
-  &:hover {
-    fill: var(--color-orange-6);
-  }
-}
-</style>

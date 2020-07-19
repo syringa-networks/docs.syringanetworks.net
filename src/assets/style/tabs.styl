@@ -1,48 +1,9 @@
-<template>
-	<div>
-		<nav :class="$style.pageNav">
-			<ul>
-				<li v-for="(tab, index) in tabs" :key="index" :class="{ [$style.isActive]: tab.isActive }">
-					<a @click="selectTab(tab)">{{ tab.name }}</a>
-				</li>
-			</ul>
-		</nav>
-
-		<div :class="$style.containerDetail">
-			<slot></slot>
-		</div>
-	</div>
-</template>
-
-<script>
-export default {
-	name: 'Tabs',
-	setup() {
-		const tabs = [];
-		return { tabs };
-	},
-
-	created() {
-		this.tabs = this.$children;
-	},
-
-	methods: {
-		selectTab(selectedTab) {
-			this.tabs.forEach(tab => {
-				tab.isActive = tab.name === selectedTab.name;
-			});
-		}
-	}
-};
-</script>
-
-<style lang="stylus" module>
 .pageNav {
   position: sticky;
-  top: -1px;
-  background: var(--color-dark);
-  border-bottom: 1px solid rgba(241, 250, 140, 0.3);
-  border-top: 1px solid rgba(241, 250, 140, 0.3);
+  top: 0;
+  background: var(--gradient-rainbow);
+  border-bottom: 1px solid rgba(247, 92, 3, 0.3);
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 6px 0px;
   z-index: 1;
 
   ul {
@@ -55,7 +16,7 @@ export default {
   }
 
   li {
-    padding: 3rem 3rem 2.65rem 0;
+    padding: 3rem 3rem 2.6rem 0;
   }
 
   a {
@@ -66,7 +27,7 @@ export default {
     padding-bottom: 1.2rem;
     overflow: hidden;
     font-weight: 400;
-    color: var(--color-light);
+    color: var(--color-white);
     text-transform: uppercase;
     letter-spacing: 1px;
     word-spacing: -5px;
@@ -109,13 +70,3 @@ export default {
     transform: scale(1);
   }
 }
-
-.containerDetail {
-  max-width: 1152px;
-  width: 94%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 4.8rem;
-  padding-bottom: 4.8rem;
-}
-</style>

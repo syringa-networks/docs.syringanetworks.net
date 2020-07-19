@@ -72,7 +72,7 @@ export default {
 		]
 	},
 	getters: {
-		LinksLength: state => {
+		LinksLength: (state) => {
 			return state.externalLinks.length;
 		}
 	}

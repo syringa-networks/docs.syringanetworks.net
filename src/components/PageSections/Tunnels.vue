@@ -1,50 +1,50 @@
 <template>
 	<div>
-		<h3 :class="$style.h3">Tunnel Interfaces</h3>
-		<div :class="$style.inputFlex">
+		<h3>Tunnel Interfaces</h3>
+		<div class="inputFlex">
 			<div>
-				<h6 :class="$style.h6">Tunnel99 IP Address</h6>
-				<input :class="$style.input" v-model="tunnel99" />
+				<h6>Tunnel99 IP Address</h6>
+				<input v-model="tunnel99" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">Tunnel999 IP Address</h6>
-				<input :class="$style.input" v-model="tunnel999" />
+				<h6>Tunnel999 IP Address</h6>
+				<input v-model="tunnel999" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">
+				<h6>
 					CUST Primary Tunnel Interface
 				</h6>
-				<input :class="$style.input" v-model="custPrimary" />
+				<input v-model="custPrimary" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">
+				<h6>
 					CUST Backup Tunnel Interface
 				</h6>
-				<input :class="$style.input" v-model="custBackup" />
+				<input v-model="custBackup" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">Tunnel136 IP Address</h6>
-				<input :class="$style.input" v-model="custPrimaryIp" />
+				<h6>Tunnel136 IP Address</h6>
+				<input v-model="custPrimaryIp" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">Tunnel1136 IP Address</h6>
-				<input :class="$style.input" v-model="custBackupIp" />
+				<h6>Tunnel1136 IP Address</h6>
+				<input v-model="custBackupIp" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">Tunnel136 Hub1</h6>
-				<input :class="$style.input" v-model="custPrimaryHub1" />
+				<h6>Tunnel136 Hub1</h6>
+				<input v-model="custPrimaryHub1" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">Tunnel136 Hub2</h6>
-				<input :class="$style.input" v-model="custPrimaryHub2" />
+				<h6>Tunnel136 Hub2</h6>
+				<input v-model="custPrimaryHub2" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">Tunnel1136 Hub1</h6>
-				<input :class="$style.input" v-model="custBackupHub1" />
+				<h6>Tunnel1136 Hub1</h6>
+				<input v-model="custBackupHub1" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">Tunnel1136 Hub2</h6>
-				<input :class="$style.input" v-model="custBackupHub2" />
+				<h6>Tunnel1136 Hub2</h6>
+				<input v-model="custBackupHub2" />
 			</div>
 		</div>
 		<pre>
@@ -144,54 +144,3 @@ export default {
 	}
 };
 </script>
-
-<style lang="stylus" module>
-.h3 {
-  padding: 4rem;
-  margin-top: -3rem;
-  color: var(--color-white);
-  background-image: var(--gradient-rainbow);
-}
-
-.inputFlex {
-  display: flex;
-  flex-direction: column;
-  padding: 3rem 4rem;
-  border: 2px solid var(--color-orange-5);
-  margin-bottom: 2rem;
-
-  div {
-    margin-bottom: 2rem;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  .h6 {
-    font-family: 'Source Code Pro';
-    text-transform: none;
-    color: var(--color-orange-5);
-    font-weight: 400;
-    letter-spacing: 0.25px;
-    font-size: 16px;
-  }
-
-  input {
-    width: 35%;
-  }
-}
-
-.input {
-  color: rgba(0, 0, 0, 0.2);
-  background: var(--color-white);
-  border: 1px solid var(--color-orange-5);
-  padding: 1rem;
-  margin-bottom: 1rem;
-
-  &:focus {
-    color: rgba(0, 0, 0, 0.8);
-    outline: none;
-  }
-}
-</style>

@@ -4,12 +4,7 @@ export default {
 		vpshow: {
 			inViewport(el) {
 				const rect = el.getBoundingClientRect();
-				return !(
-					rect.bottom < 0 ||
-					rect.right < 0 ||
-					rect.left > window.innerWidth ||
-					rect.top > window.innerHeight
-				);
+				return !(rect.bottom < 0 || rect.right < 0 || rect.left > window.innerWidth || rect.top > window.innerHeight);
 			},
 
 			bind(el, binding) {
@@ -30,10 +25,7 @@ export default {
 			},
 
 			unbind(el) {
-				document.removeEventListener(
-					'scroll',
-					el.$onScroll
-				);
+				document.removeEventListener('scroll', el.$onScroll);
 				delete el.$onScroll;
 			}
 		}

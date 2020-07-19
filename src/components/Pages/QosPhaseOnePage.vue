@@ -2,9 +2,7 @@
 	<main id="content">
 		<page-header>
 			<template slot="title">QoS Phase 1</template>
-			<template slot="subtitle"
-				>QoS Configuration for Phase 1</template
-			>
+			<template slot="subtitle">QoS Configuration for Phase 1</template>
 		</page-header>
 		<tabs>
 			<tab :selected="true" name="IOS-XE Standard">

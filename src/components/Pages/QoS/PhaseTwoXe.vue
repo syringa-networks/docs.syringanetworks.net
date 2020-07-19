@@ -1,24 +1,24 @@
 <template>
 	<div>
-		<div :class="$style.inputFlex">
-			<h3 :class="$style.h3">
+		<div class="inputFlex">
+			<h3>
 				IOS-XE CORE and DIST Policies
 			</h3>
 			<div>
-				<h6 :class="$style.h6">Policy-Map CORE_IN</h6>
-				<input :class="$style.input" v-model="coreInXe" />
+				<h6>Policy-Map CORE_IN</h6>
+				<input v-model="coreInXe" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">Policy-Map CORE_OUT</h6>
-				<input :class="$style.input" v-model="coreOutXe" />
+				<h6>Policy-Map CORE_OUT</h6>
+				<input v-model="coreOutXe" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">Policy-Map DIST_IN</h6>
-				<input :class="$style.input" v-model="distInXe" />
+				<h6>Policy-Map DIST_IN</h6>
+				<input v-model="distInXe" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">Policy-Map DIST_OUT</h6>
-				<input :class="$style.input" v-model="distOutXe" />
+				<h6>Policy-Map DIST_OUT</h6>
+				<input v-model="distOutXe" />
 			</div>
 			<pre>
         <code>
@@ -324,56 +324,3 @@ export default {
 	}
 };
 </script>
-
-<style lang="stylus" module>
-.h3 {
-  padding: 4rem;
-  margin-left: -4rem;
-  margin-right: -4rem;
-  margin-top: -3rem;
-  color: var(--color-white);
-  background-color: var(--color-orange-5);
-}
-
-.inputFlex {
-  display: flex;
-  flex-direction: column;
-  padding: 3rem 4rem;
-  border: 2px solid var(--color-orange-5);
-  margin-bottom: 2rem;
-
-  div {
-    margin-bottom: 2rem;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  .h6 {
-    font-family: 'Source Code Pro';
-    text-transform: none;
-    color: var(--color-orange-5);
-    font-weight: 400;
-    letter-spacing: 0.25px;
-    font-size: 16px;
-  }
-
-  input {
-    width: 35%;
-  }
-}
-
-.input {
-  color: rgba(0, 0, 0, 0.2);
-  background: var(--color-white);
-  border: 1px solid var(--color-orange-5);
-  padding: 1rem;
-  margin-bottom: 1rem;
-
-  &:focus {
-    color: rgba(0, 0, 0, 0.8);
-    outline: none;
-  }
-}
-</style>

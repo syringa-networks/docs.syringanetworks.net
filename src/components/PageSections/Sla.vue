@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<h3 :class="$style.h3">IP SLA Configuration</h3>
+		<h3>IP SLA Configuration</h3>
 		<pre>
       <code>
 ip sla 1
@@ -18,12 +18,3 @@ ip sla schedule 1 life forever start-time now
     </pre>
 	</div>
 </template>
-
-<style lang="stylus" module>
-.h3 {
-  padding: 4rem;
-  margin-top: -3rem;
-  color: var(--color-white);
-  background-image: var(--gradient-rainbow);
-}
-</style>

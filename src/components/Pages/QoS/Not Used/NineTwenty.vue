@@ -2,25 +2,24 @@
 	<div>
 		<h3>920 QoS Configuration</h3>
 		<p>
-			Set inbound service-policy to match QoS group and
-			outbound policy to set EXP.
+			Set inbound service-policy to match QoS group and outbound policy to set EXP.
 		</p>
-		<div :class="$style.inputFlex">
+		<div class="inputFlex">
 			<div>
-				<h6 :class="$style.h6">Policy-Map CORE_IN</h6>
-				<input :class="$style.input" v-model="coreIn" />
+				<h6>Policy-Map CORE_IN</h6>
+				<input v-model="coreIn" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">Policy-Map CORE_OUT</h6>
-				<input :class="$style.input" v-model="coreOut" />
+				<h6>Policy-Map CORE_OUT</h6>
+				<input v-model="coreOut" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">Policy-Map DIST_IN</h6>
-				<input :class="$style.input" v-model="distIn" />
+				<h6>Policy-Map DIST_IN</h6>
+				<input v-model="distIn" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">Policy-Map DIST_OUT</h6>
-				<input :class="$style.input" v-model="distOut" />
+				<h6>Policy-Map DIST_OUT</h6>
+				<input v-model="distOut" />
 			</div>
 		</div>
 		<pre>
@@ -266,47 +265,3 @@ export default {
 	}
 };
 </script>
-
-<style lang="stylus" module>
-.inputFlex {
-  display: flex;
-  flex-direction: column;
-  padding: 3rem 4rem;
-  border: 2px solid var(--color-orange-5);
-  margin-bottom: 2rem;
-
-  div {
-    margin-bottom: 2rem;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  .h6 {
-    font-family: 'Source Code Pro';
-    text-transform: none;
-    color: var(--color-orange-5);
-    font-weight: 400;
-    letter-spacing: 0.25px;
-    font-size: 16px;
-  }
-
-  input {
-    width: 35%;
-  }
-}
-
-.input {
-  color: rgba(0, 0, 0, 0.2);
-  background: var(--color-white);
-  border: 1px solid var(--color-orange-5);
-  padding: 1rem;
-  margin-bottom: 1rem;
-
-  &:focus {
-    color: rgba(0, 0, 0, 0.8);
-    outline: none;
-  }
-}
-</style>

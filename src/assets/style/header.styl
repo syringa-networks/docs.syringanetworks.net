@@ -1,0 +1,59 @@
+.siteHeader {
+  grid-column: 1;
+  grid-row: 1;
+  position: sticky;
+  top: 0;
+  height: 100vmin;
+  z-index: 10;
+  border-right: 0.1rem solid rgba(40, 42, 54, 0.3);
+}
+
+.logo {
+  width: 100%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 0.1rem solid rgba(40, 42, 54, 0.3);
+}
+
+.siteLogoVector {
+  padding-right: 3rem;
+  flex-basis: 50%;
+  fill: var(--color-dark);
+}
+
+.navigationListAnchor {
+  position: relative;
+  padding-bottom: 0.5rem;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.3s;
+  opacity: 0;
+
+  &:after {
+    position: absolute;
+    transition: 0.3s;
+    content: '';
+    width: 0;
+    left: 50%;
+    bottom: 0;
+    height: 3px;
+    background: var(--color-pink);
+    right: 0;
+    left: auto;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    &:after {
+      width: 100%;
+      left: 0;
+    }
+  }
+}
+
+.pageHeaderH1 {
+  color: var(--color-dark);
+  font-size: 5.3rem;
+  margin-bottom: 1.2rem;
+}

@@ -1,7 +1,7 @@
 <template>
 	<div>
-		<h3 :class="$style.h3">Cellular Configuration</h3>
-		<div :class="$style.inputFlex">
+		<h3>Cellular Configuration</h3>
+		<div class="inputFlex">
 			<p>If the SIM is Verizon, you need to use profile 3</p>
 			<p>If the SIM is AT&amp;T, you need to use profile 1</p>
 			<ul :class="$style.ul">
@@ -13,22 +13,22 @@
 			</ul>
 
 			<div>
-				<h6 :class="$style.h6">Access Point Name (APN)</h6>
-				<input :class="$style.input" v-model="apn" />
+				<h6>Access Point Name (APN)</h6>
+				<input v-model="apn" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">Profile Number</h6>
-				<input :class="$style.input" v-model="profileNumber" />
+				<h6>Profile Number</h6>
+				<input v-model="profileNumber" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">
+				<h6>
 					Cellular Interface (0/1/0 or 0/2/0)
 				</h6>
-				<input :class="$style.input" v-model="cellularInterface" />
+				<input v-model="cellularInterface" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">LTE Interface Address</h6>
-				<input :class="$style.input" v-model="lteInterfaceIpAddress" />
+				<h6>LTE Interface Address</h6>
+				<input v-model="lteInterfaceIpAddress" />
 			</div>
 			<p>Do this in enable mode (You'll have to type 'yes'):</p>
 			<pre>
@@ -87,57 +87,8 @@ export default {
 </script>
 
 <style lang="stylus" module>
-.h3 {
-  padding: 4rem;
-  margin-top: -3rem;
-  color: var(--color-white);
-  background-image: var(--gradient-rainbow);
-}
-
 .ul {
   padding-left: 2rem;
   margin-bottom: 2rem;
-}
-
-.inputFlex {
-  display: flex;
-  flex-direction: column;
-  padding: 3rem 4rem;
-  border: 2px solid var(--color-orange-5);
-  margin-bottom: 2rem;
-
-  div {
-    margin-bottom: 2rem;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  .h6 {
-    font-family: 'Source Code Pro';
-    text-transform: none;
-    color: var(--color-orange-5);
-    font-weight: 400;
-    letter-spacing: 0.25px;
-    font-size: 16px;
-  }
-
-  input {
-    width: 35%;
-  }
-}
-
-.input {
-  color: rgba(0, 0, 0, 0.2);
-  background: var(--color-white);
-  border: 1px solid var(--color-orange-5);
-  padding: 1rem;
-  margin-bottom: 1rem;
-
-  &:focus {
-    color: rgba(0, 0, 0, 0.8);
-    outline: none;
-  }
 }
 </style>

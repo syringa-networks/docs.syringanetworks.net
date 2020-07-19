@@ -2,12 +2,12 @@
 	<div>
 		<!-- QUESTIONS -->
 		<!-- HANDOFF REQUIREMENT -->
-		<div :class="$style.inputFlex">
+		<div class="inputFlex">
 			<div>
-				<h6 :class="$style.h6">
+				<h6>
 					What type of handoff is this?
 				</h6>
-				<select :class="$style.select" v-model="handoff.selectedHandoff">
+				<select v-model="handoff.selectedHandoff">
 					<option :value="{ id: handoff.id, name: handoff.name }" v-for="handoff in handoffChoice" :key="handoff.id">{{
 						handoff.name
 					}}</option>
@@ -17,12 +17,12 @@
 		<!-- END HANDOFF REQUIREMENT -->
 
 		<!-- UPS REQUIREMENT -->
-		<div :class="$style.inputFlex">
+		<div class="inputFlex">
 			<div>
-				<h6 :class="$style.h6">
+				<h6>
 					Does this site include a UPS?
 				</h6>
-				<select :class="$style.select" v-model="ups.selectedUPS">
+				<select v-model="ups.selectedUPS">
 					<option :value="{ id: ups.id, name: ups.name }" v-for="ups in upsChoice" :key="ups.id">{{ ups.name }}</option>
 				</select>
 			</div>
@@ -30,12 +30,12 @@
 		<!-- END UPS REQUIREMENT -->
 
 		<!-- CPE REQUIREMENT -->
-		<div :class="$style.inputFlex">
+		<div class="inputFlex">
 			<div>
-				<h6 :class="$style.h6">
+				<h6>
 					Does this site include a CPE?
 				</h6>
-				<select :class="$style.select" v-model="cpe.selectedCPE">
+				<select v-model="cpe.selectedCPE">
 					<option :value="{ id: cpe.id, name: cpe.name }" v-for="cpe in cpeChoice" :key="cpe.id">{{ cpe.name }}</option>
 				</select>
 			</div>
@@ -43,10 +43,10 @@
 		<!-- END CPE REQUIREMENT -->
 
 		<!-- VOICE REQUIREMENT -->
-		<div :class="$style.inputFlex">
+		<div class="inputFlex">
 			<div>
-				<h6 :class="$style.h6">Does this site include Voice?</h6>
-				<select :class="$style.select" v-model="voice.selectedVoice">
+				<h6>Does this site include Voice?</h6>
+				<select v-model="voice.selectedVoice">
 					<option :value="{ id: voice.id, name: voice.name }" v-for="voice in voiceChoice" :key="voice.id">{{
 						voice.name
 					}}</option>
@@ -57,52 +57,52 @@
 		<!-- END QUESTIONS -->
 
 		<!-- INFORMATION -->
-		<div :class="$style.inputFlex">
+		<div class="inputFlex">
 			<!-- UPS v-if -->
 			<div v-if="ups.selectedUPS.name === 'Yes'">
-				<h6 :class="$style.h6">
+				<h6>
 					UPS IP - 10.121, 10.131, 10.141
 				</h6>
-				<input :class="$style.input" v-model="upsIP" />
+				<input v-model="upsIP" />
 			</div>
 			<div v-if="ups.selectedUPS.name === 'Yes'">
-				<h6 :class="$style.h6">UPS Hostname</h6>
-				<input :class="$style.input" v-model="upsHostname" />
+				<h6>UPS Hostname</h6>
+				<input v-model="upsHostname" />
 			</div>
 			<!-- END UPS v-if -->
 
 			<!-- CPE v-if -->
 			<div v-if="cpe.selectedCPE.name === 'Yes'">
-				<h6 :class="$style.h6">CPE Hostname</h6>
-				<input :class="$style.input" v-model="cpeHostname" />
+				<h6>CPE Hostname</h6>
+				<input v-model="cpeHostname" />
 			</div>
 			<div v-if="cpe.selectedCPE.name === 'Yes' || ups.selectedUPS.name === 'Yes'">
-				<h6 :class="$style.h6">UPS/CPE MGMT Gateway</h6>
-				<input :class="$style.input" v-model="mgmtUpsGateway" />
+				<h6>UPS/CPE MGMT Gateway</h6>
+				<input v-model="mgmtUpsGateway" />
 			</div>
 			<div v-if="cpe.selectedCPE.name === 'Yes' || ups.selectedUPS.name === 'Yes'">
-				<h6 :class="$style.h6">
+				<h6>
 					UPS/CPE MGMT Subnet Mask - /28 or /24
 				</h6>
-				<input :class="$style.input" v-model="mgmtUpsSubnetMask" />
+				<input v-model="mgmtUpsSubnetMask" />
 			</div>
 			<!-- END CPE v-if -->
 
 			<!-- VOICE v-if -->
 			<div v-if="voice.selectedVoice.name === 'Yes'">
-				<h6 :class="$style.h6">SYG PBX RD</h6>
-				<input :class="$style.input" v-model="sygPBXRD" />
+				<h6>SYG PBX RD</h6>
+				<input v-model="sygPBXRD" />
 			</div>
 			<!-- END VOICE v-if -->
 
 			<div>
-				<h6 :class="$style.h6">Inbound Policy Map Name</h6>
-				<input :class="$style.input" v-model="policyMapName" />
+				<h6>Inbound Policy Map Name</h6>
+				<input v-model="policyMapName" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">INBOUND Policer Rate</h6>
-				<input :class="$style.input" v-model="inboundPolicy" />
-				<select :class="$style.select" v-model="throughput">
+				<h6>INBOUND Policer Rate</h6>
+				<input v-model="inboundPolicy" />
+				<select v-model="throughput">
 					<option disabled value="">Policing Throughput</option>
 					<option>{{ kilobits }}: kbps</option>
 					<option>{{ megabits }}: mbps</option>
@@ -110,15 +110,15 @@
 				</select>
 			</div>
 			<div>
-				<h6 :class="$style.h6">
+				<h6>
 					Loopback0 IP - 10.120, 10.130, 10.140
 				</h6>
-				<input :class="$style.input" v-model="loopbackIP" />
+				<input v-model="loopbackIP" />
 			</div>
 			<!-- v-for Loop -->
 			<div v-for="input in inputs" :key="input.id">
-				<h6 :class="$style.h6">{{ input.name }}</h6>
-				<input :class="$style.input" v-model="input.vmodel" />
+				<h6>{{ input.name }}</h6>
+				<input v-model="input.vmodel" />
 			</div>
 			<!-- End v-for Loop -->
 		</div>
@@ -542,68 +542,3 @@ export default {
 	}
 };
 </script>
-
-<style lang="stylus" module>
-.h3 {
-  padding: 4rem;
-  margin-top: -3rem;
-  color: var(--color-white);
-  background-image: var(--gradient-rainbow);
-}
-
-.inputFlex {
-  display: flex;
-  flex-direction: column;
-  padding: 3rem 4rem;
-  border: 2px solid var(--color-orange-5);
-  margin-bottom: 2rem;
-
-  div {
-    margin-bottom: 2rem;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  .h6 {
-    font-family: 'Source Code Pro';
-    text-transform: none;
-    color: var(--color-orange-5);
-    font-weight: 400;
-    letter-spacing: 0.25px;
-    font-size: 16px;
-  }
-
-  input, select {
-    width: 35%;
-  }
-}
-
-.input {
-  color: rgba(0, 0, 0, 0.2);
-  background: var(--color-white);
-  border: 1px solid var(--color-orange-5);
-  padding: 1rem;
-  margin-bottom: 1rem;
-
-  &:focus {
-    color: rgba(0, 0, 0, 0.8);
-    outline: none;
-  }
-}
-
-.select {
-  appearance: none;
-  background: url('~@/assets/img/ArrowDown.svg') 92% / 8% no-repeat;
-  color: rgba(0, 0, 0, 0.2);
-  border: 1px solid var(--color-orange-5);
-  padding: 1rem;
-  padding-right: 6rem;
-
-  &:focus, &:active {
-    color: rgba(0, 0, 0, 0.8);
-    outline: none;
-  }
-}
-</style>

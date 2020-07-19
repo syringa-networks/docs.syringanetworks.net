@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div :class="$style.inputFlex">
+		<div class="inputFlex">
 			<div>
 				<h6>Customer Name</h6>
 				<input v-model="customerName" />
@@ -427,21 +427,3 @@ export default {
 	}
 };
 </script>
-
-<style lang="stylus" module>
-.inputFlex {
-  display: flex;
-  flex-direction: column;
-  padding: 3rem 4rem;
-  border: 2px solid var(--color-orange-5);
-  margin-bottom: 2rem;
-
-  div {
-    margin-bottom: 2rem;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-}
-</style>

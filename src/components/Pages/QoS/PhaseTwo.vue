@@ -28,15 +28,11 @@ import PhaseTwoXr from './PhaseTwoXr';
 
 export default {
 	setup() {
-		const ingress = [
-			{ name: 'Set QoS Group or Traffic Class' },
-			{ name: 'Set EXP' }
-		];
+		const ingress = [{ name: 'Set QoS Group or Traffic Class' }, { name: 'Set EXP' }];
 		const egress = [
 			{ name: 'DIST and CORE Ports' },
 			{
-				name:
-					'Match QoS Group or Traffic Class to identify traffic'
+				name: 'Match QoS Group or Traffic Class to identify traffic'
 			},
 			{
 				name: 'Queue traffic appropriately'
@@ -57,8 +53,8 @@ export default {
 
 <style lang="stylus" module>
 .listDiv {
-  color: var(--color-dark-1);
-  border: solid 0.2rem var(--color-dark-1);
+  color: var(--color-dark);
+  border: solid 0.2rem var(--color-dark);
   padding: 3rem;
   margin-bottom: 3rem;
 }

@@ -2,9 +2,7 @@
 	<main id="content">
 		<page-header>
 			<template slot="title">Linux Administration</template>
-			<template slot="subtitle"
-				>Some of the most common commands used</template
-			>
+			<template slot="subtitle">Some of the most common commands used</template>
 		</page-header>
 		<tabs>
 			<tab :selected="true" name="show">
@@ -41,13 +39,10 @@
         </pre>
 			</tab>
 			<tab name="Add User">
-				<div :class="$style.inputFlex">
+				<div class="inputFlex">
 					<div>
-						<h6 :class="$style.h6">User Name</h6>
-						<input
-							:class="$style.input"
-							v-model="userName"
-						/>
+						<h6>User Name</h6>
+						<input v-model="userName" />
 					</div>
 				</div>
 				<h4 class="h3">Ubuntu</h4>
@@ -85,34 +80,22 @@
 			</tab>
 			<tab name="networking">
 				<h4 class="h3">Netplan Networking</h4>
-				<div :class="$style.inputFlex">
+				<div class="inputFlex">
 					<div>
-						<h6 :class="$style.h6">Network File Name</h6>
-						<input
-							:class="$style.input"
-							v-model="networkFileName"
-						/>
+						<h6>Network File Name</h6>
+						<input v-model="networkFileName" />
 					</div>
 					<div>
-						<h6 :class="$style.h6">Interface Name</h6>
-						<input
-							:class="$style.input"
-							v-model="networkInterfaceName"
-						/>
+						<h6>Interface Name</h6>
+						<input v-model="networkInterfaceName" />
 					</div>
 					<div>
-						<h6 :class="$style.h6">IP Address</h6>
-						<input
-							:class="$style.input"
-							v-model="ipAddress"
-						/>
+						<h6>IP Address</h6>
+						<input v-model="ipAddress" />
 					</div>
 					<div>
-						<h6 :class="$style.h6">Default Gateway</h6>
-						<input
-							:class="$style.input"
-							v-model="defaultGateway"
-						/>
+						<h6>Default Gateway</h6>
+						<input v-model="defaultGateway" />
 					</div>
 				</div>
 				<pre>
@@ -156,9 +139,8 @@
           </code>
         </pre>
 				<p>
-					To append <code>+noall</code> and
-					<code>+answer</code>, create a file
-					<code>.digrc</code> in your home directory
+					To append <code>+noall</code> and <code>+answer</code>, create a file <code>.digrc</code> in your home
+					directory
 				</p>
 				<pre>
           <code>
@@ -190,47 +172,3 @@ export default {
 	}
 };
 </script>
-
-<style lang="stylus" module>
-.inputFlex {
-  display: flex;
-  flex-direction: column;
-  padding: 3rem 4rem;
-  border: 2px solid var(--color-orange-5);
-  margin-bottom: 2rem;
-
-  div {
-    margin-bottom: 2rem;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  .h6 {
-    font-family: 'Source Code Pro';
-    text-transform: none;
-    color: var(--color-orange-5);
-    font-weight: 400;
-    letter-spacing: 0.25px;
-    font-size: 16px;
-  }
-
-  input {
-    width: 35%;
-  }
-}
-
-.input {
-  color: rgba(0, 0, 0, 0.2);
-  background: var(--color-white);
-  border: 1px solid var(--color-orange-5);
-  padding: 1rem;
-  margin-bottom: 1rem;
-
-  &:focus {
-    color: rgba(0, 0, 0, 0.8);
-    outline: none;
-  }
-}
-</style>

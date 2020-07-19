@@ -1,32 +1,32 @@
 <template>
 	<div>
-		<h3 :class="$style.h3">
+		<h3>
 			BGP and Route Policy Configuration
 		</h3>
-		<div :class="$style.inputFlex">
+		<div class="inputFlex">
 			<div>
-				<h6 :class="$style.h6">BGP Router ID</h6>
-				<input :class="$style.input" v-model="routerId" />
+				<h6>BGP Router ID</h6>
+				<input v-model="routerId" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">Tunnel136 1</h6>
-				<input :class="$style.input" v-model="primaryTunnel1" />
+				<h6>Tunnel136 1</h6>
+				<input v-model="primaryTunnel1" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">Tunnel136 2</h6>
-				<input :class="$style.input" v-model="primaryTunnel2" />
+				<h6>Tunnel136 2</h6>
+				<input v-model="primaryTunnel2" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">Tunnel1136 1</h6>
-				<input :class="$style.input" v-model="backupTunnel1" />
+				<h6>Tunnel1136 1</h6>
+				<input v-model="backupTunnel1" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">Tunnel1136 2</h6>
-				<input :class="$style.input" v-model="backupTunnel2" />
+				<h6>Tunnel1136 2</h6>
+				<input v-model="backupTunnel2" />
 			</div>
 			<div>
-				<h6 :class="$style.h6">LAN BGP Neighbor</h6>
-				<input :class="$style.input" v-model="lanBGPNeighbor" />
+				<h6>LAN BGP Neighbor</h6>
+				<input v-model="lanBGPNeighbor" />
 			</div>
 		</div>
 		<pre>
@@ -174,54 +174,3 @@ export default {
 	}
 };
 </script>
-
-<style lang="stylus" module>
-.h3 {
-  padding: 4rem;
-  margin-top: -3rem;
-  color: var(--color-white);
-  background-image: var(--gradient-rainbow);
-}
-
-.inputFlex {
-  display: flex;
-  flex-direction: column;
-  padding: 3rem 4rem;
-  border: 2px solid var(--color-orange-5);
-  margin-bottom: 2rem;
-
-  div {
-    margin-bottom: 2rem;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  .h6 {
-    font-family: 'Source Code Pro';
-    text-transform: none;
-    color: var(--color-orange-5);
-    font-weight: 400;
-    letter-spacing: 0.25px;
-    font-size: 16px;
-  }
-
-  input {
-    width: 35%;
-  }
-}
-
-.input {
-  color: rgba(0, 0, 0, 0.2);
-  background: var(--color-white);
-  border: 1px solid var(--color-orange-5);
-  padding: 1rem;
-  margin-bottom: 1rem;
-
-  &:focus {
-    color: rgba(0, 0, 0, 0.8);
-    outline: none;
-  }
-}
-</style>

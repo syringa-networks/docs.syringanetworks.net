@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<h3>920 Base: Routed</h3>
-		<div :class="$style.inputFlex">
+		<div class="inputFlex">
 			<div>
 				<h6>How Many Ports are on the 920?</h6>
 				<select v-model="port.selectedPort">
@@ -13,7 +13,7 @@
 		</div>
 
 		<!-- v-for Loop -->
-		<div :class="$style.inputFlex">
+		<div class="inputFlex">
 			<div>
 				<h6>
 					Lo0 IP Address - 10.120, 10.130, 10.140
@@ -401,37 +401,3 @@ export default {
 	}
 };
 </script>
-
-<style lang="stylus" module>
-.h3 {
-  padding: 4rem;
-  margin-top: -3rem;
-  color: var(--color-white);
-  background-image: var(--gradient-rainbow);
-}
-
-.inputFlex {
-  display: flex;
-  flex-direction: column;
-  padding: 3rem 4rem;
-  border: 2px solid var(--color-orange-5);
-  margin-bottom: 2rem;
-
-  div {
-    margin-bottom: 2rem;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  .h6 {
-    font-family: 'Source Code Pro';
-    text-transform: none;
-    color: var(--color-orange-5);
-    font-weight: 400;
-    letter-spacing: 0.25px;
-    font-size: 16px;
-  }
-}
-</style>
