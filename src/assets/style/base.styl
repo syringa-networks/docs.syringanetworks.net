@@ -71,7 +71,7 @@ input {
   margin-bottom: 1rem;
 
   &:focus {
-    color: rgba(40, 42, 54, 0.8);
+    color: var(--color-pink);
     outline: none;
   }
 }
@@ -125,6 +125,10 @@ select {
     	box-shadow: 0 0 0 3px -moz-mac-focusring;
     	color: #222; 
     	outline: none;
+		}
+
+		&:active {
+			outline: none;
 		}
 }
 
