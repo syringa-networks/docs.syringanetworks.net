@@ -132,9 +132,9 @@ address-family ipv4 vrf SYG
  neighbor 10.16.200.2 activate
 exit-address-family
 !
-ip as-path access-list 100 deny ^15305$
+ip as-path access-list 100 deny _15305_
 ip as-path access-list 100 permit .*
-ip as-path access-list 101 deny ^65502$
+ip as-path access-list 101 deny _65502_
 ip as-path access-list 101 permit .*
 !
 route-map DENY_DEFAULT_RMAP permit 10
