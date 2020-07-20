@@ -58,7 +58,7 @@ address-family ipv4 vrf CUST
  neighbor TUNNEL136_PRIMARY remote-as 15305
  neighbor TUNNEL136_PRIMARY soft-reconfiguration inbound
  neighbor TUNNEL136_PRIMARY route-map DENY_DEFAULT_RMAP out
- neighbor TUNNEL136_PRIMARY	filter-list 101 out
+ neighbor TUNNEL136_PRIMARY filter-list 101 out
  neighbor TUNNEL136_BACKUP peer-group
  neighbor TUNNEL136_BACKUP remote-as 15305
  neighbor TUNNEL136_BACKUP soft-reconfiguration inbound
