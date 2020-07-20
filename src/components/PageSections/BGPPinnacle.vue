@@ -35,40 +35,48 @@ address-family ipv4 vrf CUST
  neighbor TUNNEL69_PRIMARY remote-as 65502
  neighbor TUNNEL69_PRIMARY soft-reconfiguration inbound
  neighbor TUNNEL69_PRIMARY route-map DENY_DEFAULT_RMAP out
+ neighbor TUNNEL69_PRIMARY filter-list 100 out
  neighbor TUNNEL69_BACKUP peer-group
  neighbor TUNNEL69_BACKUP remote-as 65502
  neighbor TUNNEL69_BACKUP soft-reconfiguration inbound
  neighbor TUNNEL69_BACKUP route-map LOCAL_PREF_90 in
  neighbor TUNNEL69_BACKUP route-map MED_25 out
+ neighbor TUNNEL69_BACKUP filter-list 100 out
  neighbor TUNNEL169_PRIMARY peer-group
  neighbor TUNNEL169_PRIMARY remote-as 65502
  neighbor TUNNEL169_PRIMARY soft-reconfiguration inbound
  neighbor TUNNEL169_PRIMARY route-map LOCAL_PREF_80 in
  neighbor TUNNEL169_PRIMARY route-map MED_50 out
+ neighbor TUNNEL169_PRIMARY filter-list 100 out
  neighbor TUNNEL169_BACKUP peer-group
  neighbor TUNNEL169_BACKUP remote-as 65502
  neighbor TUNNEL169_BACKUP soft-reconfiguration inbound
  neighbor TUNNEL169_BACKUP route-map LOCAL_PREF_70 in
  neighbor TUNNEL169_BACKUP route-map MED_75 out
+ neighbor TUNNEL169_BACKUP filter-list 100 out
  neighbor TUNNEL136_PRIMARY peer-group
  neighbor TUNNEL136_PRIMARY remote-as 15305
  neighbor TUNNEL136_PRIMARY soft-reconfiguration inbound
  neighbor TUNNEL136_PRIMARY route-map DENY_DEFAULT_RMAP out
+ neighbor TUNNEL136_PRIMARY	filter-list 101 out
  neighbor TUNNEL136_BACKUP peer-group
  neighbor TUNNEL136_BACKUP remote-as 15305
  neighbor TUNNEL136_BACKUP soft-reconfiguration inbound
  neighbor TUNNEL136_BACKUP route-map LOCAL_PREF_90 in
  neighbor TUNNEL136_BACKUP route-map MED_25 out
+ neighbor TUNNEL136_BACKUP filter-list 101 out
  neighbor TUNNEL1136_PRIMARY peer-group
  neighbor TUNNEL1136_PRIMARY remote-as 15305
  neighbor TUNNEL1136_PRIMARY soft-reconfiguration inbound
  neighbor TUNNEL1136_PRIMARY route-map LOCAL_PREF_80 in
  neighbor TUNNEL1136_PRIMARY route-map MED_50 out
+ neighbor TUNNEL1136_PRIMARY filter-list 101 out
  neighbor TUNNEL1136_BACKUP peer-group
  neighbor TUNNEL1136_BACKUP remote-as 15305
  neighbor TUNNEL1136_BACKUP soft-reconfiguration inbound
  neighbor TUNNEL1136_BACKUP route-map LOCAL_PREF_70 in
  neighbor TUNNEL1136_BACKUP route-map MED_75 out
+ neighbor TUNNEL1136_BACKUP filter-list 101 out
  neighbor 10.255.36.1 peer-group TUNNEL69_PRIMARY
  neighbor 10.255.36.1 activate
  neighbor 10.255.36.2 peer-group TUNNEL69_BACKUP
@@ -123,6 +131,11 @@ address-family ipv4 vrf SYG
  neighbor 10.16.200.2 peer-group TUNNEL999_BACKUP
  neighbor 10.16.200.2 activate
 exit-address-family
+!
+ip as-path access-list 100 deny ^15305$
+ip as-path access-list 100 permit .*
+ip as-path access-list 101 deny ^65502$
+ip as-path access-list 101 permit .*
 !
 route-map DENY_DEFAULT_RMAP permit 10
  match ip address prefix-list DENY_DEFAULT
