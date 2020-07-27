@@ -27,7 +27,6 @@
 
 .container {
   display: flex;
-  max-width: 115rem;
   width: 94%;
   margin-left: auto;
   margin-right: auto;

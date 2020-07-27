@@ -47,6 +47,9 @@
 			<tab name="EEM Script">
 				<failover-section></failover-section>
 			</tab>
+			<tab name="Dialer Interface">
+				<dialer-section></dialer-section>
+			</tab>
 		</tabs>
 	</main>
 </template>
@@ -67,6 +70,7 @@ import NatSection from '../PageSections/NAT';
 import SlaSection from '../PageSections/Sla';
 import PaloSection from '../PageSections/PaloAlto';
 import FailoverSection from '../PageSections/FailoverScript';
+import DialerSection from '../PageSections/DialerInterface';
 
 export default {
 	components: {
@@ -84,7 +88,8 @@ export default {
 		NatSection,
 		SlaSection,
 		PaloSection,
-		FailoverSection
+		FailoverSection,
+		DialerSection
 	}
 };
 </script>

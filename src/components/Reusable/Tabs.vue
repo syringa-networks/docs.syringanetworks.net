@@ -47,11 +47,10 @@ export default {
 
   ul {
     display: flex;
-    align-items: flex-end;
-    max-width: 1152px;
     width: 94%;
     margin-left: auto;
     margin-right: auto;
+    padding-left: 4rem;
   }
 
   li {
@@ -111,7 +110,6 @@ export default {
 }
 
 .containerDetail {
-  max-width: 1152px;
   width: 94%;
   margin-left: auto;
   margin-right: auto;
