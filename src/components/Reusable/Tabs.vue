@@ -28,7 +28,7 @@ export default {
 
 	methods: {
 		selectTab(selectedTab) {
-			this.tabs.forEach(tab => {
+			this.tabs.forEach((tab) => {
 				tab.isActive = tab.name === selectedTab.name;
 			});
 		}
@@ -43,12 +43,11 @@ export default {
   background: var(--color-dark);
   border-bottom: 1px solid rgba(241, 250, 140, 0.3);
   border-top: 1px solid rgba(241, 250, 140, 0.3);
+  overflow-x: scroll;
   z-index: 1;
 
   ul {
     display: flex;
-    width: 94%;
-    margin-left: auto;
     margin-right: auto;
     padding-left: 4rem;
   }
@@ -115,5 +114,10 @@ export default {
   margin-right: auto;
   padding-top: 4.8rem;
   padding-bottom: 4.8rem;
+
+  @media (min-width: 1440px) {
+    width: 65%;
+    margin-left: 3rem;
+  }
 }
 </style>

@@ -41,14 +41,8 @@
 			<tab name="ip sla">
 				<sla-section></sla-section>
 			</tab>
-			<tab name="palo alto">
-				<palo-section></palo-section>
-			</tab>
 			<tab name="EEM Script">
 				<failover-section></failover-section>
-			</tab>
-			<tab name="Dialer Interface">
-				<dialer-section></dialer-section>
 			</tab>
 		</tabs>
 	</main>
@@ -68,9 +62,7 @@ import BgpSection from '../PageSections/BGPPinnacle';
 import RoutingSection from '../PageSections/Routing';
 import NatSection from '../PageSections/NAT';
 import SlaSection from '../PageSections/Sla';
-import PaloSection from '../PageSections/PaloAlto';
 import FailoverSection from '../PageSections/FailoverScript';
-import DialerSection from '../PageSections/DialerInterface';
 
 export default {
 	components: {
@@ -87,9 +79,7 @@ export default {
 		RoutingSection,
 		NatSection,
 		SlaSection,
-		PaloSection,
-		FailoverSection,
-		DialerSection
+		FailoverSection
 	}
 };
 </script>

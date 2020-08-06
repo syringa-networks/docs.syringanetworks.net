@@ -337,7 +337,7 @@ export default {
 		// ISIS Network ID Calculation
 		const isisNetworkID = computed(() => {
 			const address = loopbackIP.value;
-			const parts = address.split('.').map(x => x.padStart(3, '0'));
+			const parts = address.split('.').map((x) => x.padStart(3, '0'));
 
 			let isisNetworkId = parts.join('');
 			isisNetworkId = isisNetworkId.substring(4);

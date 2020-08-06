@@ -5,6 +5,8 @@ import SDwanGlobal from './views/SDwanGlobal.vue';
 import SDwanOne from './views/SDwanOne.vue';
 import SDwanTwo from './views/SDwanTwo.vue';
 import SDwanPinnacle from './views/SDwanPinnacle';
+import C1111 from './views/C1111';
+import PaloAlto from './views/PaloAlto';
 
 Vue.use(Router);
 
@@ -43,6 +45,16 @@ const routes = [
 		path: '/sdwan-pinnacle',
 		name: 'sdwan-pinnacle',
 		component: SDwanPinnacle
+	},
+	{
+		path: '/c1111',
+		name: 'c1111',
+		component: C1111
+	},
+	{
+		path: '/palo-alto',
+		name: 'palo-alto',
+		component: PaloAlto
 	},
 	{
 		path: '/qos',

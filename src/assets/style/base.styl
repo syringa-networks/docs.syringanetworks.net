@@ -164,9 +164,14 @@ img {
 }
 
 .site-wrapper {
-	display: grid;
-  grid-template: 1fr/42rem repeat(12, 1fr);
+	display: flex;
+	flex-direction: column;
 	position: relative;	
+
+	@media (min-width: 1440px) {
+		display: grid;
+		grid-template: 1fr/42rem repeat(12, 1fr);
+	}
 }
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
@@ -240,6 +245,10 @@ p {
 	margin-bottom: 18px;
 	font-weight: 400;
 	letter-spacing: 0;
+
+	span {
+		color: var(--color-pink)
+	}
 }
 
 .inputFlex {

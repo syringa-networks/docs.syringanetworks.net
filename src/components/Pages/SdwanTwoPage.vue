@@ -38,9 +38,6 @@
 			<tab name="nat">
 				<nat-section></nat-section>
 			</tab>
-			<tab name="palo alto">
-				<palo-section></palo-section>
-			</tab>
 		</tabs>
 	</main>
 </template>
@@ -58,7 +55,6 @@ import TunnelSection from '../PageSections/Tunnels';
 import BgpSection from '../PageSections/BGP';
 import RoutingSection from '../PageSections/Routing';
 import NatSection from '../PageSections/NAT';
-import PaloSection from '../PageSections/PaloAlto';
 
 export default {
 	components: {
@@ -73,8 +69,7 @@ export default {
 		TunnelSection,
 		BgpSection,
 		RoutingSection,
-		NatSection,
-		PaloSection
+		NatSection
 	}
 };
 </script>

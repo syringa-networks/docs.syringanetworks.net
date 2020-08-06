@@ -101,8 +101,8 @@ export default {
   height: 100%;
 
   div {
-    width: 42rem;
     padding-top: 3rem;
+		padding-bottom: 3rem;
   }
 }
 

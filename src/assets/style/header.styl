@@ -2,10 +2,17 @@
   grid-column: 1;
   grid-row: 1;
   position: sticky;
-  top: 0;
-  height: 100vmin;
+  top: auto;
+  height: auto;
   z-index: 10;
-  border-right: 0.1rem solid rgba(40, 42, 54, 0.3);
+  border-bottom: 0.1rem solid rgba(40, 42, 54, 0.3);
+
+  @media (min-width: 1440px) {
+    height: 100vmin;
+    position: sticky;
+    top: 0;
+    border-right: 0.1rem solid rgba(40, 42, 54, 0.3);
+  }
 }
 
 .logo {
@@ -17,8 +24,12 @@
 
 .siteLogoVector {
   padding-right: 3rem;
-  flex-basis: 50%;
+  flex-basis: 17%;
   fill: var(--color-dark);
+
+  @media (min-width: 1440px) {
+    flex-basis: 50%;
+  }
 }
 
 .navigationListAnchor {

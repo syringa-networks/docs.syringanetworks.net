@@ -13,9 +13,7 @@ module.exports = {
 	pluginOptions: {
 		'style-resources-loader': {
 			preProcessor: 'stylus',
-			patterns: [
-				path.resolve(__dirname, 'src/assets/style/*.styl')
-			]
+			patterns: [path.resolve(__dirname, 'src/assets/style/*.styl')]
 		}
 	}
 };

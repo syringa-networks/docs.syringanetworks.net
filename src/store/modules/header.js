@@ -27,6 +27,14 @@ export default {
 				name: 'SDWAN Pinnacle',
 				location: { name: 'sdwan-pinnacle' }
 			},
+			{
+				name: 'C1111',
+				location: { name: 'c1111' }
+			},
+			{
+				name: 'Palo Alto',
+				location: { name: 'palo-alto' }
+			},
 			// {
 			// 	name: 'QoS Overview',
 			// 	location: { name: 'qos' }
