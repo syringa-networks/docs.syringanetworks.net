@@ -43,7 +43,7 @@ export default {
   background: var(--color-dark);
   border-bottom: 1px solid rgba(241, 250, 140, 0.3);
   border-top: 1px solid rgba(241, 250, 140, 0.3);
-  overflow-x: scroll;
+  overflow-x: auto;
   z-index: 1;
 
   ul {
