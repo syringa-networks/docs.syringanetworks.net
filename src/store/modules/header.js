@@ -50,6 +50,10 @@ export default {
 			{
 				name: 'NCS 520',
 				location: { name: 'ncs-520' }
+			},
+			{
+				name: 'Accedian NID',
+				location: { name: 'accedian-nid' }
 			}
 		]
 	}

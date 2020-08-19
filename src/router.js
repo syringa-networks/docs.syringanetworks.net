@@ -75,6 +75,11 @@ const routes = [
 		path: '/ncs-520',
 		name: 'ncs-520',
 		component: () => import(/* webpackChunkName: "ncs-520" */ './views/Ncs520.vue')
+	},
+	{
+		path: '/accedian-nid',
+		name: 'accedian-nid',
+		component: () => import(/* webpackChunkName: "accedian-nid" */ './views/AccedianNid.vue')
 	}
 ];
 
