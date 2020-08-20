@@ -47,8 +47,8 @@ const routes = [
 		component: SDwanPinnacle
 	},
 	{
-		path: '/c1111',
-		name: 'c1111',
+		path: '/isr-1100',
+		name: 'isr-1100',
 		component: C1111
 	},
 	{

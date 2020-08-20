@@ -28,8 +28,8 @@ export default {
 				location: { name: 'sdwan-pinnacle' }
 			},
 			{
-				name: 'C1111',
-				location: { name: 'c1111' }
+				name: 'ISR 1100',
+				location: { name: 'isr-1100' }
 			},
 			{
 				name: 'Palo Alto',
@@ -47,10 +47,10 @@ export default {
 				name: 'ASR 920',
 				location: { name: 'asr-920' }
 			},
-			{
-				name: 'NCS 520',
-				location: { name: 'ncs-520' }
-			},
+			// {
+			// 	name: 'NCS 520',
+			// 	location: { name: 'ncs-520' }
+			// },
 			{
 				name: 'Accedian NID',
 				location: { name: 'accedian-nid' }
