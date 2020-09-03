@@ -23,6 +23,14 @@
 				<input v-model="customerName" />
 			</div>
 			<div>
+				<h6>Unique Customer Location (City)</h6>
+				<input v-model="customerLocation" />
+			</div>
+			<div>
+				<h6>Palo Alto Hostname</h6>
+				<input v-model="paloAltoHostname" />
+			</div>
+			<div>
 				<h6>Loopback0 Interface</h6>
 				<input v-model="loopIP" />
 			</div>
@@ -46,7 +54,7 @@ interface GigabitEthernet0/0/0
  negotiation auto
 !
 interface GigabitEthernet0/0/1
- description CUST <span>{{ cId }}</span> <span>{{ serviceOrder }}</span> <span>{{ customerName }}</span>
+ description CUST <span>{{ cId }}</span> <span>{{ serviceOrder }} {{ customerName }}, {{ customerLocation }} via {{ paloAltoHostname }}</span> 
  vrf forwarding CUST
  ip address <span>{{ insideIP }}</span>
  ip helper-address 10.10.4.12
@@ -56,19 +64,19 @@ interface GigabitEthernet0/0/1
  negotiation auto
 !
 interface GigabitEthernet0/1/0
- description MGMT to PALO ALTO
+ description MGMT to <span>{{ paloAltoHostname }}</span> Trunk Port
  switchport trunk allowed vlan 99,136
  switchport mode trunk
  load-interval 30
 !
 interface Vlan99
- description MGMT to PALO vrf SYG
+ description MGMT to <span>{{ paloAltoHostname }}</span> vrf SYG
  vrf forwarding SYG
  ip address <span>{{ vlan99IP }}</span> 255.255.255.254
  load-interval 30
 !
 interface Vlan136
- description MGMT to PALO vrf SIMPLOT
+ description MGMT to <span>{{ paloAltoHostname }}</span> vrf SIMPLOT
  vrf forwarding CUST
  ip address <span>{{ vlan136IP }}</span> 255.255.255.254
  load-interval 30
@@ -90,13 +98,24 @@ export default {
 		const insideIP = '10.255.10.1 255.255.255.0';
 		const cId = '99/KRFS/102647//SYG';
 		const serviceOrder = 'SO-151678';
-		const customerName = 'SIMPLOT';
-		const mgmtIP = '10.50.0.1 255.255.255.252';
+		const customerName = 'Simplot';
+		const customerLocation = 'Chicago';
+		const paloAltoHostname = 'SNGWU2001PA001';
 		const loopIP = '10.16.164.64 255.255.255.255';
-		const trackIP = '66.232.64.82';
 		const vlan99IP = '10.50.2.20';
 		const vlan136IP = '10.255.32.20';
-		return { outsideIP, insideIP, cId, serviceOrder, customerName, mgmtIP, loopIP, trackIP, vlan99IP, vlan136IP };
+		return {
+			outsideIP,
+			insideIP,
+			cId,
+			serviceOrder,
+			customerName,
+			customerLocation,
+			paloAltoHostname,
+			loopIP,
+			vlan99IP,
+			vlan136IP
+		};
 	}
 };
 </script>
