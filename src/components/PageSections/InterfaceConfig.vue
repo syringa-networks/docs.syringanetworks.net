@@ -54,7 +54,7 @@ interface GigabitEthernet0/0/0
  negotiation auto
 !
 interface GigabitEthernet0/0/1
- description CUST <span>{{ cId }}</span> <span>{{ serviceOrder }} {{ customerName }}, {{ customerLocation }} via {{ paloAltoHostname }}</span> 
+ description CUST <span>{{ cId }}</span> <span>{{ serviceOrder }} {{ customerName }} {{ customerLocation }} via {{ paloAltoHostname }}</span> 
  vrf forwarding CUST
  ip address <span>{{ insideIP }}</span>
  ip helper-address 10.10.4.12
