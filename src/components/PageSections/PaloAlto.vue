@@ -659,8 +659,8 @@ export default {
                     &lt;/block&gt;
                   &lt;/credential-enforcement&gt;
                   &lt;allow-list&gt;
-                    &lt;member&gt;zscaler.com&lt;/member&gt;
-                    &lt;member&gt;zscaler.net&lt;/member&gt;
+                    &lt;member&gt;*.zscaler.com&lt;/member&gt;
+                    &lt;member&gt;*.zscaler.net&lt;/member&gt;
                   &lt;/allow-list&gt;
                   &lt;action&gt;block&lt;/action&gt;
                   &lt;block&gt;
