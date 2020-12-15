@@ -11,6 +11,9 @@
 			<tab name="LTE Modem Upgrade">
 				<modem-upgrade-section></modem-upgrade-section>
 			</tab>
+			<tab name="Router Upgrade (16.12.4)">
+				<router-upgrade-section></router-upgrade-section>
+			</tab>
 		</tabs>
 	</main>
 </template>
@@ -19,12 +22,14 @@
 import PageHeader from '@/components/PageCommon/PageHeader';
 import DialerSection from '../PageSections/DialerInterface';
 import ModemUpgradeSection from '../PageSections/ModemUpgrade';
+import RouterUpgradeSection from '../PageSections/RouterUpgrade';
 
 export default {
 	components: {
 		PageHeader,
 		DialerSection,
-		ModemUpgradeSection
+		ModemUpgradeSection,
+		RouterUpgradeSection
 	}
 };
 </script>
