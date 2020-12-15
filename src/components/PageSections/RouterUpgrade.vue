@@ -56,7 +56,16 @@ ip name-server vrf <span>{{ primaryVrf }}</span> 1.1.1.1
 license boot level <span>{{ licenseLevel }}</span>
 			</code>
 		</pre>
+		<p>Test with ping and telnet to verify connectivity to cisco.com from vrf <span>{{ primaryVrf }}</span></p>
+		<pre>
+			<code>
+ping vrf <span>{{ primaryVrf }}</span> software.cisco.com
+telnet software.cisco.com 80 /vrf <span>{{ primaryVrf }}</span>
+telnet software.cisco.com 443 /vrf <span>{{ primaryVrf }}</span>
+			</code>
+		</pre>
 		<h2>Register with Smart Licensing</h2>
+		<p>At this point you need to create a token in the Smart Account and then register the device.</p>
 		<pre>
 			<code>
 license smart register idtoken ***
