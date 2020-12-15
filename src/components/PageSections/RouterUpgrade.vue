@@ -17,9 +17,10 @@ copy ftp://192.168.71.127/isr1100/c1100-universalk9.16.12.04.SPA.bin flash:
 boot system flash:c1100-universalk9.16.12.04.SPA.bin
 
 wr
+
+reload
 			</code>
 		</pre>
-		<p>Then <span>REBOOT</span></p>
 		<h2>Configure Smart Licensing</h2>
 		<div class="inputFlex">
 			<div>
