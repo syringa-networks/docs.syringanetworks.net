@@ -46,6 +46,8 @@ reload
 		</div>
 		<pre>
 			<code>
+license smart enable
+!
 call-home
  contact-email-addr sch-smart-licensing@cisco.com
  source-interface <span>{{ primaryInterface }}</span>
