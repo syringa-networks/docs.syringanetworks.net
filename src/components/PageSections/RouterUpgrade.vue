@@ -9,7 +9,15 @@
 terminal monitor
 
 copy ftp://192.168.71.127/isr1100/c1100-universalk9.16.12.04.SPA.bin flash:
+
+copy ftp://192.168.71.127/isr1100/C1100-rommon-1612-1r-SPA.pkg flash:
       </code>
+		</pre>
+		<p>Now it's time to upgrade ROMMON</p>
+		<pre>
+			<code>
+upgrade rom-monitor filename bootflash:C1100-rommon-1612-1r-SPA.pkg all
+			</code>
 		</pre>
 		<p>Once this is done, you'll need to set the router to boot from the new image:</p>
 		<pre>
