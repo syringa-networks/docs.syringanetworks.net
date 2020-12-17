@@ -46,8 +46,6 @@ reload
 		</div>
 		<pre>
 			<code>
-license smart enable
-!
 call-home
  contact-email-addr sch-smart-licensing@cisco.com
  source-interface <span>{{ primaryInterface }}</span>
@@ -71,8 +69,8 @@ license boot level <span>{{ licenseLevel }}</span>
 		<pre>
 			<code>
 ping vrf <span>{{ primaryVrf }}</span> software.cisco.com
-telnet software.cisco.com 80 /vrf <span>{{ primaryVrf }}</span>
-telnet software.cisco.com 443 /vrf <span>{{ primaryVrf }}</span>
+telnet software.cisco.com 80 /vrf <span>{{ primaryVrf }}</span> /ipv4
+telnet software.cisco.com 443 /vrf <span>{{ primaryVrf }}</span> /ipv4
 			</code>
 		</pre>
 		<h2>Register with Smart Licensing</h2>
