@@ -77,7 +77,7 @@ telnet software.cisco.com 443 /vrf <span>{{ primaryVrf }}</span> /ipv4
 		<p>At this point you need to create a token in the Smart Account and then register the device.</p>
 		<pre>
 			<code>
-license smart register idtoken ***
+license smart register idtoken ZjBiMWY2MjEtMWEzNC00NGYzLWIwYjAtZjRiZWYxMTkyNzQ0LTE2MTYxMDAy%0AMTc5Mzd8dXYzOVl4azVPWXNOK2xqeWE0ZHQ3eXRTaWFocTd5dnZvSHdUQmxm%0ALy9DQT0%3D%0A
 
 show lic stat
 			</code>
