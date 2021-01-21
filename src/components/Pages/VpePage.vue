@@ -11,24 +11,17 @@
 				<h3 class="h3">CSR Licensing</h3>
 				<pre>
           <code>
-config t
- license smart enable
+license smart enable
 !
 call-home
  vrf OUTSIDE
- contact-email-addr solson@syringanetworks.net
  exit
 !
 ip http client source-interface gigabitEthernet1
 !
-subscriber templating
-exit
-!
 license smart register idtoken <span>***</span>
 !
-conf t
 platform hardware throughput level MB <span>***</span>
-exit
 !
 show lic status
 show license all
@@ -43,14 +36,12 @@ reload
 				<pre>
           <code>
 vrf definition SYG
- description MGMT to SDWAN - Tunnel 15305
  rd 15305:5<span>x</span>00199
  route-target both 15305:99
  address-family ipv4
  exit-address-family
 !
 vrf definition SIMPLOT
- description CUST to SDWAN - Tunnel 65501
  rd 15305:5<span>x</span>001136
  route-target both 15305:1000136
  address-family ipv4
