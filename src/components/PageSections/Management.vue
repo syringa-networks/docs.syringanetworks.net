@@ -48,6 +48,8 @@ ip access-list standard IPV4_MGMT_ACCESS
  permit 67.215.44.0 0.0.0.63
  deny any
 !
+logging buffered 512000
+!
 snmp-server community OcmeQTo2 RO ipv6 IPV6_MGMT_ACCESS IPV4_MGMT_ACCESS
 snmp-server community S1lFLzMi RW ipv6 IPV6_MGMT_ACCESS IPV4_MGMT_ACCESS
 snmp-server location <span>{{ streetAddress }}</span>  [<span>{{ lat }}</span>, <span>{{ long }}</span>]
