@@ -21,8 +21,12 @@
 				<input v-model="hostName" />
 			</div>
 			<div>
-				<h6>Trouble Password</h6>
-				<input v-model="troublePassword" />
+				<h6>Local Password</h6>
+				<input v-model="localPassword" />
+			</div>
+			<div>
+				<h6>Enable Secret</h6>
+				<input v-model="enableSecret" />
 			</div>
 			<div>
 				<h6>Radius Server Key</h6>
@@ -33,7 +37,9 @@
       <code>
 hostname <span>{{ hostName }}</span>
 !
-username trouble privilege 15 secret <span>{{ troublePassword }}</span>
+username 4ab@67H secret <span>{{ localPassword }}</span>
+!
+enable secret <span>{{ enableSecret }}</span>
 !
 aaa new-model
 !<template v-if="radius.selectedRadius.name === 'Yes'">
@@ -86,9 +92,10 @@ export default {
 	},
 	setup() {
 		const hostName = 'BOI-GEN-DEMO-1';
-		const troublePassword = '!#*G4#Ebd8w';
+		const localPassword = '!#*G4#Ebd8w';
+		const enableSecret = '&44hg(@kn';
 		const radiusKey = 'football49';
-		return { hostName, troublePassword, radiusKey };
+		return { hostName, localPassword, enableSecret, radiusKey };
 	}
 };
 </script>
